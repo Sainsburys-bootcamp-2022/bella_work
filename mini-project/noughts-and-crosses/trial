@@ -1,0 +1,14 @@
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+// this is currently showing a message that dissappears when clicked 
+<object.onclick = function()
+img id="image" src="https://dictionary.cambridge.org/images/full/circle_noun_001_02738.jpg?version=5.0.239"
+alt="naughts_image" />
+</object.onclick>
+click here
+</button>
