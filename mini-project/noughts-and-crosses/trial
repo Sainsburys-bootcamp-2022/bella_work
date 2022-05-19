@@ -12,3 +12,58 @@ alt="naughts_image" />
 </object.onclick>
 click here
 </button>
+
+
+//
+# const winChecker = board => {
+#   for (let column = 0; column < squares.length; column++) {
+#     const horizontalCase = squares[column][0];
+#     const verticalCase = squares[0][column];
+#     const negativeCase = squares[0][0];
+#     const positiveCase = squares[0][squares.length - 1];
+#     if (horizontalCase !== null) {
+#       for (let row = 0; row < squares.length; row++) {
+#         if (horizontalCase !== squares[column][row]) {
+#           break;
+#         } else {
+#           if (row === squares.length - 1) {
+#             return true;
+#           }
+#         }
+#       }
+#     }
+#     if (verticalCase !== null) {
+#       for (let row = 0; row < squares.length; row++) {
+#         if (verticalCase !== squares[row][column]) {
+#           break;
+#         } else {
+#           if (row === squares.length - 1) {
+#             return true;
+#           }
+#         }
+#       }
+#     }
+#     if (negativeCase !== null) {
+#       for (let row = 0; row < squares.length; row++) {
+#         if (negativeCase !== squares[row][row]) {
+#           break;
+#         } else {
+#           if (row === squares.length - 1) {
+#             return true;
+#           }
+#         }
+#       }
+#     }
+#     if (positiveCase !== null) {
+#       for (let row = 0; row < squares.length; row++) {
+#         if (positiveCase !== squares[row][squares.length - 1 - row]) {
+#           break;
+#         } else {
+#           if (row === squares.length - 1) {
+#             return true;
+#           }
+#         }
+#       }
+#     }
+#   }
+#   return false;
