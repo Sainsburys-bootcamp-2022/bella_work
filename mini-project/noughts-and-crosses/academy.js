@@ -40,25 +40,29 @@ function takeTurn(row, column) {
 function checkWinner() {
     const horizontalWinner = checkHorizontalWinner()
     const verticalWinner = checkVerticalWinner ()
-    const diagonalWinner = checkDiagonalWinner ()
+     const diagonalWinner = checkDiagonalWinner ()
     
     if(horizontalWinner) {
         return horizontalWinner
-    } 
-    else if (verticalWinner) {
+    } else if (verticalWinner) {
         return verticalWinner
+    } else if (diagonalWinner) {
+        return diagonalWinner
+    } else {
+        return null
     }
-        else if (diagonalWinner){
-            return diagonalWinner
-        }
+}
+        // else if (diagonalWinner){
+        //     return diagonalWinner
+        // }
         
-        else {
-            alert ('draw')
-            {
-                return "nobody"
-            }
-        }
-    }
+        // else {
+        //     alert ('draw')
+        //     {
+        //         return "nobody"
+        //     }
+        // }
+   
     
 
         
@@ -107,9 +111,6 @@ const checkVerticalWinner = () => {
     }
 }
 
-
-
-
 const checkMatchingColumn = (column) => {
     const firstRow = board [0][column]
     const secondRow = board[1][column]
@@ -118,33 +119,42 @@ const checkMatchingColumn = (column) => {
     return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
 }
 
+// const checkDiagonalWinner = () => {
+//     for(column =0; column <3; column ++){
+//         console.log('check diagonal equals ', checkMatchingDiagonal(column))
+
+//         if (checkMatchingDiagonal(column)) {
+//             console.log('check diagonal equals ', checkMatchingDiagonal(column))
+           
+//             if(noughtsTurn === false) {
+//                 return "noughts"
+//             } else {
+//                 return "crosses"
+//             }
+//         }
+//     }
+// }
 
 const checkDiagonalWinner = () => {
-    for(column =0; column <3; column ++){
-        console.log('check diagonal equals ', checkMatchingDiagonal(column))
-
-        if (checkMatchingDiagonal(column)) {
-            console.log('check diagonal equals ', checkMatchingDiagonal(column))
-           
-            if(noughtsTurn === false) {
-                return "noughts"
-            } else {
-                return "crosses"
-            }
+    
+    if (checkMatchingDiagonal()) {
+        if(noughtsTurn === false)  { 
+            return "noughts"
+        } else {
+            return "crosses" 
         }
     }
 }
 
+const checkMatchingDiagonal = (row) => {
 
-
-
-const checkMatchingDiagonal = (column) => {
-    const firstRow = board[0][column][row][0]
-    const secondRow = board[1][column][row][1]
-    const thirdRow = board[2][column][row][2]
+    const firstRow = board[0][0]
+    const secondRow = board[1][1]
+    const thirdRow = board[2][2]
     
     return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
-}
+   
+ }
 
 
 
