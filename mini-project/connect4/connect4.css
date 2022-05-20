@@ -1,0 +1,61 @@
+.column {
+    width: 7vw;
+    height: 7vw;
+    margin: 0.4vw;
+    border: 4mm ridge rgba(243, 126, 175, 0.823);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%/50%;
+    font-size: 80px;
+    padding: 0.1vw;
+}
+
+ /* #grid
+{
+    margin: auto;
+    border: 2px black solid;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+} */
+
+h1{
+    font-size: large;
+    font-family: Helvetica;
+    font-size: 4vw;
+}
+h2 {
+    font-size: large;
+    font-family: Helvetica;
+    color: aliceblue;
+}
+.row {
+    width: 100vw;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.marker {
+    width: 50px;
+    height: 80px;
+}
+
+#winner-display {
+    display: none;
+    background-color: red;
+    color: white;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(164, 217, 221);
+}
+
+#reset-button{
+    margin-top: 10px;
+}
+
