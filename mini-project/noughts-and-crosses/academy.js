@@ -40,7 +40,7 @@ function takeTurn(row, column) {
 function checkWinner() {
     const horizontalWinner = checkHorizontalWinner()
     const verticalWinner = checkVerticalWinner ()
-     const diagonalWinner = checkDiagonalWinner ()
+    const diagonalWinner = checkDiagonalWinner ()
     
     if(horizontalWinner) {
         return horizontalWinner
@@ -146,18 +146,19 @@ const checkDiagonalWinner = () => {
     }
 }
 
-const checkMatchingDiagonal = (row) => {
+const checkMatchingDiagonal = () => {
 
-    const firstRow = board[0][0]
+    const firstRow = board[0][0] // || board[2][0]
     const secondRow = board[1][1]
-    const thirdRow = board[2][2]
-    
-    return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
+    const thirdRow = board[2][2] // || board [0][2]
+    const fourthRow = board[0][2]
+    const fifthRow = board[1][1]
+    const sixthRow = board[2][0]
+
+    return firstRow === secondRow && firstRow === thirdRow && firstRow !==null || fourthRow === secondRow && fifthRow === sixthRow && fourthRow !==null 
    
  }
-
-
-
+ 
 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
