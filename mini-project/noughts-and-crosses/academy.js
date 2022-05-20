@@ -52,24 +52,7 @@ function checkWinner() {
         return null
     }
 }
-        // else if (diagonalWinner){
-        //     return diagonalWinner
-        // }
-        
-        // else {
-        //     alert ('draw')
-        //     {
-        //         return "nobody"
-        //     }
-        // }
-   
-    
-
-        
-        //else if diagonalWinner
-
-
-     
+ 
     
 
 const checkHorizontalWinner = () => {
@@ -119,21 +102,7 @@ const checkMatchingColumn = (column) => {
     return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
 }
 
-// const checkDiagonalWinner = () => {
-//     for(column =0; column <3; column ++){
-//         console.log('check diagonal equals ', checkMatchingDiagonal(column))
 
-//         if (checkMatchingDiagonal(column)) {
-//             console.log('check diagonal equals ', checkMatchingDiagonal(column))
-           
-//             if(noughtsTurn === false) {
-//                 return "noughts"
-//             } else {
-//                 return "crosses"
-//             }
-//         }
-//     }
-// }
 
 const checkDiagonalWinner = () => {
     
