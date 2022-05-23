@@ -1,6 +1,6 @@
 .column {
-    width: 8vw;
-    height: 8vw;
+    width: 7vw;
+    height: 7vw;
     margin: 0.4vw;
     border: 4mm solid rgba(140, 237, 250, 0.823);
     display: flex;
@@ -8,16 +8,18 @@
     align-items: center;
     border-radius: 50%/50%;
     font-size: 80px;
-    padding: 0.1vw;
+    padding: 0.7vw;
 }
 
-.grid
+#grid
 {
     margin: auto;
     border: 2px black solid;
-    width: 5vw;
+    width: 90vw;
+    border-radius: 25px;
     align-items: center;
     justify-content: center;
+    padding: 0.1vw;
 } 
 
 h1{
@@ -31,7 +33,7 @@ h2 {
     color: rgb(37, 118, 189);
 }
 .row {
-    width: 100vw;
+    width: 10 vw;
     margin: auto;
     align-items: center;
     display: flex;
