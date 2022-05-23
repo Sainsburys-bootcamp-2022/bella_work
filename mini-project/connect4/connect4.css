@@ -1,8 +1,8 @@
 .column {
-    width: 7vw;
-    height: 7vw;
+    width: 8vw;
+    height: 8vw;
     margin: 0.4vw;
-    border: 4mm ridge rgba(243, 126, 175, 0.823);
+    border: 4mm solid rgba(140, 237, 250, 0.823);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,14 +11,14 @@
     padding: 0.1vw;
 }
 
- /* #grid
+.grid
 {
     margin: auto;
     border: 2px black solid;
-    width: 50vw;
+    width: 5vw;
     align-items: center;
     justify-content: center;
-} */
+} 
 
 h1{
     font-size: large;
@@ -28,7 +28,7 @@ h1{
 h2 {
     font-size: large;
     font-family: Helvetica;
-    color: aliceblue;
+    color: rgb(37, 118, 189);
 }
 .row {
     width: 100vw;
@@ -52,7 +52,7 @@ h2 {
 
 body {
     text-align: center;
-    background-color: rgb(164, 217, 221);
+    background-color: rgb(255, 255, 255);
 }
 
 #reset-button{
