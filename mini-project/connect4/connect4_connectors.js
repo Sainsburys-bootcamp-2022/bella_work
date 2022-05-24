@@ -12,8 +12,8 @@ for (f of functions) { // f= index
 
 // Clear down the elements drawn on the board.
 function clearBoard() { //clear down elements 
-    for (let rowIndex = 0; rowIndex < 5; rowIndex++) { // for loop going thro each off the row index and column index and setting it to nothing
-        for (let columnIndex = 0; columnIndex < 6; columnIndex++) { // inputs the column index, goes thro it all the column index and changes them to "" - not null
+    for (let rowIndex = 0; rowIndex < 6; rowIndex++) { // for loop going thro each off the row index and column index and setting it to nothing
+        for (let columnIndex = 0; columnIndex < 7; columnIndex++) { // inputs the column index, goes thro it all the column index and changes them to "" - not null
             document.getElementById(`row-${rowIndex}-column-${columnIndex}`).innerHTML = "" // row index and column index innder HTMl changed to ""
         }
     }
@@ -78,6 +78,8 @@ function resetClick(event) { //when reset button is clicked
     winnerDisplay.style.display = "None"; //takes out the block 
     clearBoard();
 }
+
+
 
 // Bind the click events for the grid.
 for (let rowIndex = 0; rowIndex < 6; rowIndex++) {

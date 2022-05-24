@@ -4,7 +4,6 @@ let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
 ]
 console.table(board)
@@ -107,60 +106,109 @@ const checkMatchingRow = () => {
         }
     }
     
-    const checkMatchingColumn = (column) => {
-        const firstRow = board [0][column]
+    const checkMatchingColumn = () => {
+        const firstRow = board[0][column]
         const secondRow = board[1][column]
         const thirdRow = board[2][column]
+        const fourthRow = board[3][column]
+        const fifthRow = board[4][column]
+        const sixthRow = board[5][column]
+       
         
-        return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
+       return firstRow === secondRow && firstRow === thirdRow && firstRow === fourthRow && firstRow !==null ||
+        secondRow === thirdRow && secondRow === fourthRow && secondRow === fifthRow && secondRow !== null ||
+        thirdRow === fourthRow && thirdRow === fifthRow && thirdRow === sixthRow && thirdRow !==null 
+        
     }
     
     
+    // function checkDiagonalWinner(board, row, column) {
+    //     var result = false
+    //      if(board[row][column] != [0][0]) {
+    //         // there are four possible directions of a win
+    //         // if the top right contains a possible win
+    //         if(row - 3 > -1 && column + 3 < columnIndex) {
+    //             result = board[row][column] == board[row - 1][column + 1] &&
+    //                      board[row][column] == board[row - 2][column + 2] &&
+    //                      board[row][column] == board[row - 3][column + 3]; 
+    //         }
+    //         // if the bottom right contains possible win
+    //         if(row + 3 < numRows  && column + 3 < columnIndex) {
+    //             result = board[row][column] == board[row + 1][column + 1] &&
+    //                      board[row][column] == board[row + 2][column + 2] &&
+    //                      board[row][column] == board[row + 3][column + 3]; 
+    //         }
+    //         // if the bottom left contains possible win
+    //         if(row + 3 < rowIndex && column - 3 > -1) {
+    //             result = board[row][column] == board[row + 1][column - 1] &&
+    //                      board[row][column] == board[row + 2][column - 2] &&
+    //                      board[row][column] == board[row + 3][column - 3]; 
+    //         }
+    //         // if the top left contains a possible win
+    //         if(row - 3 > -1 && column - 3 > -1) {
+    //             result = board[row][column] == board[row - 1][column - 1] &&
+    //                      board[row][column] == board[row - 2][column - 2] &&
+    //                      board[row][column] == board[row - 3][column - 3]; 
+    //         }
+    //     }
     
-    const checkDiagonalWinner = () => {
-        
-        if (checkMatchingDiagonal()) {
-            if(redturn === false)  { 
-                return "red"
-            } else {
-                return "yellow" 
-            }
+    //     return result
+    // }
+    
+const checkDiagonalWinner = () => {
+ 
+    let board_deepcopy = //ensures we are not copying the reference values from original
+    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
+    let flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
+console.log(flatboard) //logs the values of this string 
+for (let i =0; i <flatboard.options.length;  i++){
+
+
+
+    
+        if(redturn === false && (a[i] === 4))
+         {
+            return "red"
+        } else if  {
+            return "yellow"
         }
     }
-    
-    const checkMatchingDiagonal = () => {
-    
-        const firstRow = board[0][0] // || board[2][0]
-        const secondRow = board[1][1]
-        const thirdRow = board[2][2] // || board [0][2]
-        const fourthRow = board[0][2]
-        const fifthRow = board[1][1]
-        const sixthRow = board[2][0]
-    
-        return firstRow === secondRow && firstRow === thirdRow && firstRow !==null || fourthRow === secondRow && fifthRow === sixthRow && fourthRow !==null 
-       
-     }
-     
+        break;
+
+}
 
 
 
 
+// //let board =
+// ['0','1','2','3','4','5','6',
+// '7','8','9','10','11','12','13',
+// '14','15','16','17','18','19','20',
+// '21','22','23','24','25','26','27',
+// '28','29','30','31','32','33','34',
+// '35','36','37','38','39','40','41'
+// ]
+
+
+
+
+}
 
 
   
 // 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
-  
-    console.log("resetGame was called");
+
     board = 
-    [[null, null, null, null, null, null, null],
+   [ [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null]]
+    [null, null, null, null, null, null, null]
+]
+    console.table(board)
 }
 
 
