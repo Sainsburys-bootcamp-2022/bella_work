@@ -49,7 +49,7 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
     const board = getBoard(); //board always = get board
     //if (!isValidRowOrColumn(board) || !board.every(isValidColumn)) { // chekcing board is a 2d array, links to 37-40 functions, if not showing yellow, red or null someting is an issue. 
         //throw "Expecting 'getBoard' to return a 2d array where all values match are null or one of the strings 'yellow' or 'red'. Actually received: " + JSON.stringify(board);
-    
+    console.log(takeTurn)
 
     drawBoard(board);
     const winner = checkWinner();
@@ -59,6 +59,7 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
             throw "Expecting 'checkWinner' to return null or one of the strings 'yellow', 'red' or 'nobody'. Actually received: " + winner;
          // bings back an error message
         }
+        
         const winnerName = document.getElementById("winner-name"); //changes the (document =HTML ) points to HTMl and gets the elemnt
         winnerName.innerText = winner;// winner name - gets check winner function inner text (red/yellow = winner value)
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html

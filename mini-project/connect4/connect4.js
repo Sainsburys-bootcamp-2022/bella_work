@@ -7,6 +7,8 @@ let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
 ]
+console.table(board)
+
 
 let redturn = true
 
@@ -15,28 +17,32 @@ let redturn = true
 function takeTurn(row, column) {
     console.log(`takeTurn was called with row: ${row}, column: ${column}`);
     console.log(redturn);
-    console.log('row is ', row)
-    console.log('column is ', column)
+    for (let i=5; i>=0;  i--){ //i = number of column, wiill loop whilst i >= 0 will loop but it runs thro all iteration until its successful. the i ensures it starts at the bottom.
 
-    if (board[row][column] === null && redturn === true){
-        board[row][column] = "red"
+    if (board[i][column] === null && redturn === true){
+        board[i][column] = "red"
         redturn = false
-    } else if (board[row][column]=== null) {
-        board[row][column] = "yellow"
+        break
+    } else if (board[i][column]=== null) {
+        board[i][column] = "yellow"
         redturn = true
+        break
     }
     else {
-        alert ('this space is taken')
     }
-
-   
+    
 }
+console.table(board)
+}
+
 
 // Return either "noughts", "crosses" or "nobody" if the game is over.
 // Otherwise return null to continue playing.
 
 
+
 function checkWinner() {
+
     const horizontalWinner = checkHorizontalWinner()
     const verticalWinner = checkVerticalWinner ()
     const diagonalWinner = checkDiagonalWinner ()
@@ -59,31 +65,6 @@ const checkHorizontalWinner = () => {
 console.log('check row equals ', checkMatchingRow(row))
         if (checkMatchingRow(row)) {
             console.log('check row equals ', checkMatchingRow(row))
-            if(noughtsTurn === false) {
-                return "red"
-            } else {
-                return "yellow"
-            }
-        }
-    }
-}
-
-
-const checkMatchingRow = (row) => {
-    const firstColumn = board[row][0]
-    const secondColumn = board[row][1]
-    const thirdColumn = board[row][2]
-    
-    return firstColumn === secondColumn && firstColumn === thirdColumn && firstColumn !==null
-}
-
-const checkVerticalWinner = () => {
-    for(column =0; column <7; column ++){
-        console.log('check column equals ', checkMatchingColumn(column))
-
-        if (checkMatchingColumn(column)) {
-            console.log('check column equals ', checkMatchingColumn(column))
-           
             if(redturn === false) {
                 return "red"
             } else {
@@ -93,54 +74,96 @@ const checkVerticalWinner = () => {
     }
 }
 
-const checkMatchingColumn = (column) => {
-    const firstRow = board [0][column]
-    const secondRow = board[1][column]
-    const thirdRow = board[2][column]
-    
-    return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
+
+const checkMatchingRow = () => {
+    const firstColumn = board[row][0]
+    const secondColumn = board[row][1]
+    const thirdColumn = board[row][2]
+    const fourthColumn = board[row][3]
+    const fifthColumn = board[row][4]
+    const sixthColumn = board[row][5]
+    const seventhColumn = board[row][6]
+
+ return firstColumn === secondColumn && firstColumn === thirdColumn && firstColumn === fourthColumn && firstColumn !==null ||
+        secondColumn === thirdColumn && secondColumn === fourthColumn && secondColumn === fifthColumn && secondColumn !== null ||
+        thirdColumn === fourthColumn && thirdColumn === fifthColumn && thirdColumn === sixthColumn && thirdColumn !==null ||
+        fourthColumn === fifthColumn && fourthColumn === sixthColumn && fourthColumn === seventhColumn && fourthColumn !== null
 }
-
-
-
-const checkDiagonalWinner = () => {
     
-    if (checkMatchingDiagonal()) {
-        if(redturn === false)  { 
-            return "red"
-        } else {
-            return "yellow" 
+    
+    const checkVerticalWinner = () => {
+        for(column =0; column <7; column ++){
+            console.log('check column equals ', checkMatchingColumn(column))
+    
+            if (checkMatchingColumn(column)) {
+                console.log('check column equals ', checkMatchingColumn(column))
+               
+                if(redturn === false) {
+                    return "red"
+                } else {
+                    return "yellow"
+                }
+            }
         }
     }
-}
+    
+    const checkMatchingColumn = (column) => {
+        const firstRow = board [0][column]
+        const secondRow = board[1][column]
+        const thirdRow = board[2][column]
+        
+        return firstRow === secondRow && firstRow === thirdRow && firstRow !==null
+    }
+    
+    
+    
+    const checkDiagonalWinner = () => {
+        
+        if (checkMatchingDiagonal()) {
+            if(redturn === false)  { 
+                return "red"
+            } else {
+                return "yellow" 
+            }
+        }
+    }
+    
+    const checkMatchingDiagonal = () => {
+    
+        const firstRow = board[0][0] // || board[2][0]
+        const secondRow = board[1][1]
+        const thirdRow = board[2][2] // || board [0][2]
+        const fourthRow = board[0][2]
+        const fifthRow = board[1][1]
+        const sixthRow = board[2][0]
+    
+        return firstRow === secondRow && firstRow === thirdRow && firstRow !==null || fourthRow === secondRow && fifthRow === sixthRow && fourthRow !==null 
+       
+     }
+     
 
-const checkMatchingDiagonal = () => {
 
-    const firstRow = board[0][0] // || board[2][0]
-    const secondRow = board[1][1]
-    const thirdRow = board[2][2] // || board [0][2]
-    const fourthRow = board[0][2]
-    const fifthRow = board[1][1]
-    const sixthRow = board[2][0]
 
-    return firstRow === secondRow && firstRow === thirdRow && firstRow !==null || fourthRow === secondRow && fifthRow === sixthRow && fourthRow !==null 
-   
- }
- 
 
+
+
+  
+// 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
   
     console.log("resetGame was called");
     board = 
+    [[null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null]
+    [null, null, null, null, null, null, null]]
 }
+
+
 
 // Return the current board state with either a "nought" or a "cross" in
 // each position. Put a null in a position that hasn't been played yet.

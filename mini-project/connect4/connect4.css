@@ -1,22 +1,23 @@
 .column {
-    width: 7vw;
-    height: 7vw;
-    margin: 0.4vw;
-    border: 4mm solid rgba(140, 237, 250, 0.823);
+    width: 2vw;
+    height: 2vw;
+    margin: 0.2vw;
+    border: 1vw solid rgba(140, 237, 250, 0.823);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%/50%;
-    font-size: 80px;
+    font-size: 3vw;
     padding: 0.7vw;
 }
 
 #grid
 {
     margin: auto;
-    border: 2px black solid;
-    width: 90vw;
-    border-radius: 25px;
+    border: 0.5vw black solid;
+    width: 42vw;
+    height: 36vw;
+    border-radius: 30px;
     align-items: center;
     justify-content: center;
     padding: 0.1vw;
@@ -60,4 +61,3 @@ body {
 #reset-button{
     margin-top: 10px;
 }
-

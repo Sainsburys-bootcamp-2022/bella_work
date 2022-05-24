@@ -50,6 +50,7 @@ function checkWinner() {
         return diagonalWinner
     } else {
         return null
+        alert ('draw')
     }
 }
  
