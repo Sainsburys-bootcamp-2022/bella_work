@@ -43,139 +43,259 @@ console.table(board)
 function checkWinner() {
 
     const horizontalWinner = checkHorizontalWinner()
-    const verticalWinner = checkVerticalWinner ()
-    const diagonalWinner = checkDiagonalWinner ()
+     const verticalWinner = checkVerticalWinner ()
+    // const diagonalWinner = checkDiagonalWinner ()
     
     if(horizontalWinner) {
         return horizontalWinner
-    } else if (verticalWinner) {
-        return verticalWinner
-    } else if (diagonalWinner) {
-        return diagonalWinner
-    } else {
+     } else if (verticalWinner) {
+         return verticalWinner
+    // } else if (diagonalWinner) {
+    //     return diagonalWinner
+     } else {
         return null
-    }
+     }
 }
+
  
     
 
+// const checkHorizontalWinner = () => {
+//     for(row =0; row <6;  row++){
+// console.log('check row equals ', checkMatchingRow(row))
+//         if (checkMatchingRow(row)) {
+//             console.log('check row equals ', checkMatchingRow(row))
+//             if(redturn === false) {
+//                 return "red"
+//             } else {
+//                 return "yellow"
+//             }
+//         }
+//     }
+// }
+
+
+// const checkMatchingRow = () => {
+//     const firstColumn = board[row][0]
+//     const secondColumn = board[row][1]
+//     const thirdColumn = board[row][2]
+//     const fourthColumn = board[row][3]
+//     const fifthColumn = board[row][4]
+//     const sixthColumn = board[row][5]
+//     const seventhColumn = board[row][6]
+
+//  return firstColumn === secondColumn && firstColumn === thirdColumn && firstColumn === fourthColumn && firstColumn !==null ||
+//         secondColumn === thirdColumn && secondColumn === fourthColumn && secondColumn === fifthColumn && secondColumn !== null ||
+//         thirdColumn === fourthColumn && thirdColumn === fifthColumn && thirdColumn === sixthColumn && thirdColumn !==null ||
+//         fourthColumn === fifthColumn && fourthColumn === sixthColumn && fourthColumn === seventhColumn && fourthColumn !== null
+// }
+    
+    
+    // const checkVerticalWinner = () => {
+    //     for(column =0; column <7; column ++){
+    //         console.log('check column equals ', checkMatchingColumn(column))
+    
+    //         if (checkMatchingColumn(column)) {
+    //             console.log('check column equals ', checkMatchingColumn(column))
+               
+    //             if(redturn === false) {
+    //                 return "red"
+    //             } else {
+    //                 return "yellow"
+    //             }
+    //         }
+    //     }
+    // }
+    
+    // const checkMatchingColumn = () => {
+    //     const firstRow = board[0][column]
+    //     const secondRow = board[1][column]
+    //     const thirdRow = board[2][column]
+    //     const fourthRow = board[3][column]
+    //     const fifthRow = board[4][column]
+    //     const sixthRow = board[5][column]
+       
+        
+    //    return firstRow === secondRow && firstRow === thirdRow && firstRow === fourthRow && firstRow !==null ||
+    //     secondRow === thirdRow && secondRow === fourthRow && secondRow === fifthRow && secondRow !== null ||
+    //     thirdRow === fourthRow && thirdRow === fifthRow && thirdRow === sixthRow && thirdRow !==null 
+        
+    // }
+    
+    
+
+ 
+ 
+// flatboard.forEach(( 
+    
+
+
+// a for loop, starting at 0, checks thro all the values, adding one each time, when it finds a value it changes the value of i to =
+// the idnex number. assign this index number to another vairable. run the loop again. if the difference between i and k = 1 then carry onto the next lop
+//  make the index value of, repeat this until we have ran the loop 4 times. 
+
 const checkHorizontalWinner = () => {
-    for(row =0; row <6;  row++){
-console.log('check row equals ', checkMatchingRow(row))
-        if (checkMatchingRow(row)) {
-            console.log('check row equals ', checkMatchingRow(row))
-            if(redturn === false) {
+
+    let board_deepcopy = //ensures we are not copying the reference values from original
+    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
+    const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
+   // console.log(flatboard) //logs the values of this string 
+let j = 0
+let k = 0
+let i = 0
+let rowcount = 0
+console.log(flatboard.indexOf('red'))
+console.log(flatboard.indexOf('yellow'))
+
+    for (let i = 0; i < flatboard.length ; i++) {
+
+        console.log(flatboard[i])
+        if (flatboard[i] == "red")
+        {
+            rowcount = 1
+            let hozdif = 1
+            let vertdif = 7
+            for (let m = i; m < i+3; m++) {
+                if (flatboard[m+hozdif] == "red")
+                {
+                    rowcount = rowcount +1
+                }
+                else
+                {
+                    rowcount = 0
+                    break
+                }
+
+            }
+            if (rowcount == 4)
+            {
+                console.log("red wins")
+            }
+
+        }
+        else if (flatboard[i] == "yellow")
+        {
+            rowcount = 1
+            let hozdif = 1
+            let vertdif = 7
+            for (let m = i; m < i+3; m++) {
+                if (flatboard[m+hozdif] == "yellow")
+                {
+                    rowcount = rowcount +1
+                }
+                else
+                {
+                    rowcount = 0
+                    break
+                }
+
+            }
+            if (rowcount == 4)
+            {
+                console.log("yellow wins")
+            }
+        }
+    }
+}
+const checkVerticalWinner = () => {
+
+    let board_deepcopy = //ensures we are not copying the reference values from original
+    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
+    const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
+   // console.log(flatboard) //logs the values of this string 
+        for (let i = 0; i < flatboard.length ; i++) {
+
+            console.log(flatboard[i])
+            if (flatboard[i] == "red")
+            {
+                columncount = 1
+                let hozdif = 1
+                let vertdif = 7
+                for (let m = i; m < i+7; m++) {
+                    if (flatboard[m+vertdif] == "red")
+                    {
+                        rowcount = columncount +1
+                    }
+                    else
+                    {
+                        columncount = 0
+                        break
+                    }
+    
+                }
+                if (columncount == 4)
+                {
+                    console.log("red wins")
+                }
+    
+            }
+            else if (flatboard[i] == "yellow")
+            {
+                columncount = 1
+                let hozdif = 1
+                let vertdif = 7
+                for (let m = i; m < i+7; m++) {
+                    if (flatboard[m+vertdif] == "yellow")
+                    {
+                        rowcount = columncount +1
+                    }
+                    else
+                    {
+                        columncount = 0
+                        break
+                    }
+    
+                }
+                if (columncount == 4)
+                {
+                    console.log("yellow wins")
+                }
+            }
+        }
+    }
+        /*
+          j=i ; 
+         {
+           for (let i = 0; i < flatboard.length ; i++) {
+                 k=i
+           }
+            function diff (j, k) {
+               if (k> j) {
+                   return k-j
+               }else {
+                        return j-k
+               }
+           }
+            if (diff === 1 && redturn=== false){
                 return "red"
             } else {
                 return "yellow"
             }
         }
-    }
-}
+        */
+      
 
-
-const checkMatchingRow = () => {
-    const firstColumn = board[row][0]
-    const secondColumn = board[row][1]
-    const thirdColumn = board[row][2]
-    const fourthColumn = board[row][3]
-    const fifthColumn = board[row][4]
-    const sixthColumn = board[row][5]
-    const seventhColumn = board[row][6]
-
- return firstColumn === secondColumn && firstColumn === thirdColumn && firstColumn === fourthColumn && firstColumn !==null ||
-        secondColumn === thirdColumn && secondColumn === fourthColumn && secondColumn === fifthColumn && secondColumn !== null ||
-        thirdColumn === fourthColumn && thirdColumn === fifthColumn && thirdColumn === sixthColumn && thirdColumn !==null ||
-        fourthColumn === fifthColumn && fourthColumn === sixthColumn && fourthColumn === seventhColumn && fourthColumn !== null
-}
-    
-    
-    const checkVerticalWinner = () => {
-        for(column =0; column <7; column ++){
-            console.log('check column equals ', checkMatchingColumn(column))
-    
-            if (checkMatchingColumn(column)) {
-                console.log('check column equals ', checkMatchingColumn(column))
-               
-                if(redturn === false) {
-                    return "red"
-                } else {
-                    return "yellow"
-                }
-            }
-        }
-    }
-    
-    const checkMatchingColumn = () => {
-        const firstRow = board[0][column]
-        const secondRow = board[1][column]
-        const thirdRow = board[2][column]
-        const fourthRow = board[3][column]
-        const fifthRow = board[4][column]
-        const sixthRow = board[5][column]
-       
-        
-       return firstRow === secondRow && firstRow === thirdRow && firstRow === fourthRow && firstRow !==null ||
-        secondRow === thirdRow && secondRow === fourthRow && secondRow === fifthRow && secondRow !== null ||
-        thirdRow === fourthRow && thirdRow === fifthRow && thirdRow === sixthRow && thirdRow !==null 
-        
-    }
-    
-    
-    // function checkDiagonalWinner(board, row, column) {
-    //     var result = false
-    //      if(board[row][column] != [0][0]) {
-    //         // there are four possible directions of a win
-    //         // if the top right contains a possible win
-    //         if(row - 3 > -1 && column + 3 < columnIndex) {
-    //             result = board[row][column] == board[row - 1][column + 1] &&
-    //                      board[row][column] == board[row - 2][column + 2] &&
-    //                      board[row][column] == board[row - 3][column + 3]; 
-    //         }
-    //         // if the bottom right contains possible win
-    //         if(row + 3 < numRows  && column + 3 < columnIndex) {
-    //             result = board[row][column] == board[row + 1][column + 1] &&
-    //                      board[row][column] == board[row + 2][column + 2] &&
-    //                      board[row][column] == board[row + 3][column + 3]; 
-    //         }
-    //         // if the bottom left contains possible win
-    //         if(row + 3 < rowIndex && column - 3 > -1) {
-    //             result = board[row][column] == board[row + 1][column - 1] &&
-    //                      board[row][column] == board[row + 2][column - 2] &&
-    //                      board[row][column] == board[row + 3][column - 3]; 
-    //         }
-    //         // if the top left contains a possible win
-    //         if(row - 3 > -1 && column - 3 > -1) {
-    //             result = board[row][column] == board[row - 1][column - 1] &&
-    //                      board[row][column] == board[row - 2][column - 2] &&
-    //                      board[row][column] == board[row - 3][column - 3]; 
-    //         }
-    //     }
-    
-    //     return result
-    // }
-    
-const checkDiagonalWinner = () => {
- 
-    let board_deepcopy = //ensures we are not copying the reference values from original
-    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
-    let flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
-console.log(flatboard) //logs the values of this string 
-for (let i =0; i <flatboard.options.length;  i++){
+//for (let i =0; i <flatboard.options.length;  i++){
 
 
 
-    
-        if(redturn === false && (a[i] === 4))
-         {
-            return "red"
-        } else if  {
-            return "yellow"
-        }
-    }
-        break;
 
-}
+
+// 
+
+
+
+
+//         if(redturn === false && (a[i] === 4))
+//          {
+//             return "red"
+//         } else if  {
+//             return "yellow"
+//         }
+//     }
+//         break;
+
+
 
 
 
@@ -190,9 +310,6 @@ for (let i =0; i <flatboard.options.length;  i++){
 // ]
 
 
-
-
-}
 
 
   

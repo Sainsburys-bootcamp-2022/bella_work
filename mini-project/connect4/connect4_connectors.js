@@ -89,6 +89,17 @@ for (let rowIndex = 0; rowIndex < 6; rowIndex++) {
     }
 }
 
+function playername() {
+    let redplayer = document.getElementById("player 1").value;
+    let yellowplayer = document.getElementById("player 2").value;
+     const playerdisplay = document.getElementById(`red-${redplayer}-yellow-${yellowplayer}`).innerText = playernameinputtext;
+     playerdisplay.style.display  // chnaging i
+}
+
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", playername);
+
+
 // Bind the click event for the reset button.
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", resetClick);
