@@ -43,19 +43,22 @@ console.table(board)
 function checkWinner() {
 
     const horizontalWinner = checkHorizontalWinner()
-     const verticalWinner = checkVerticalWinner ()
+     const verticalWinner = checkVerticalWinner()
     // const diagonalWinner = checkDiagonalWinner ()
     
     if(horizontalWinner) {
         return horizontalWinner
      } else if (verticalWinner) {
-         return verticalWinner
+         return verticalWinner 
+     } else {
+         return null
+     }
+        
     // } else if (diagonalWinner) {
     //     return diagonalWinner
-     } else {
-        return null
-     }
+
 }
+
 
  
     
@@ -144,19 +147,18 @@ let j = 0
 let k = 0
 let i = 0
 let rowcount = 0
-console.log(flatboard.indexOf('red'))
-console.log(flatboard.indexOf('yellow'))
+
 
     for (let i = 0; i < flatboard.length ; i++) {
 
-        console.log(flatboard[i])
+       // console.log(flatboard[i])
         if (flatboard[i] == "red")
         {
             rowcount = 1
             let hozdif = 1
             let vertdif = 7
             for (let m = i; m < i+3; m++) {
-                if (flatboard[m+hozdif] == "red")
+                if (flatboard[m+hozdif] === "red")
                 {
                     rowcount = rowcount +1
                 }
@@ -167,19 +169,19 @@ console.log(flatboard.indexOf('yellow'))
                 }
 
             }
-            if (rowcount == 4)
+            if (rowcount === 4)
             {
                 console.log("red wins")
             }
 
         }
-        else if (flatboard[i] == "yellow")
+        else if (flatboard[i] === "yellow")
         {
             rowcount = 1
             let hozdif = 1
             let vertdif = 7
             for (let m = i; m < i+3; m++) {
-                if (flatboard[m+hozdif] == "yellow")
+                if (flatboard[m+hozdif] === "yellow")
                 {
                     rowcount = rowcount +1
                 }
@@ -190,7 +192,7 @@ console.log(flatboard.indexOf('yellow'))
                 }
 
             }
-            if (rowcount == 4)
+            if (rowcount === 4)
             {
                 console.log("yellow wins")
             }
@@ -199,59 +201,72 @@ console.log(flatboard.indexOf('yellow'))
 }
 const checkVerticalWinner = () => {
 
+   
     let board_deepcopy = //ensures we are not copying the reference values from original
     JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
     const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
    // console.log(flatboard) //logs the values of this string 
-        for (let i = 0; i < flatboard.length ; i++) {
+let j = 0
+let k = 0
+let i = 0
+let rowcount = 0
+console.log("in vertdiff")
 
-            console.log(flatboard[i])
-            if (flatboard[i] == "red")
-            {
-                columncount = 1
-                let hozdif = 1
-                let vertdif = 7
-                for (let m = i; m < i+7; m++) {
-                    if (flatboard[m+vertdif] == "red")
-                    {
-                        rowcount = columncount +1
-                    }
-                    else
-                    {
-                        columncount = 0
-                        break
-                    }
+    for (let i = 0; i < flatboard.length ; i++) {
+
     
-                }
-                if (columncount == 4)
+        if (flatboard[i] == "red")
+        {
+            rowcount = 1
+            let hozdif = 1
+            let vertdif = i+7
+            for (let m = 0; m < 3; m++) {
+                if (flatboard[vertdif] === "red")
                 {
-                    console.log("red wins")
+                    rowcount = rowcount +1
+                    vertdif = vertdif+7
+                    console.log(vertdif)
                 }
-    
+                else
+                {
+                    rowcount = 0
+                    break
+                }
+
             }
-            else if (flatboard[i] == "yellow")
+            if (rowcount === 4)
             {
-                columncount = 1
+                console.log("red wins")
+            }
+
+        }
+        else  (flatboard[i] == "yellow")
+            {
+                rowcount = 1
                 let hozdif = 1
-                let vertdif = 7
-                for (let m = i; m < i+7; m++) {
-                    if (flatboard[m+vertdif] == "yellow")
+                let vertdif = i+7
+                for (let m = 0; m < 3; m++) {
+                    if (flatboard[vertdif] === "yellow")
                     {
-                        rowcount = columncount +1
+                        rowcount = rowcount +1
+                        vertdif = vertdif+7
+                        console.log(vertdif)
                     }
                     else
                     {
-                        columncount = 0
+                        rowcount = 0
                         break
                     }
     
                 }
-                if (columncount == 4)
+                if (rowcount === 4)
                 {
                     console.log("yellow wins")
                 }
+    
             }
-        }
+        
+    }
     }
         /*
           j=i ; 
