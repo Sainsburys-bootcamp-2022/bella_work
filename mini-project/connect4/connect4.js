@@ -6,7 +6,7 @@ let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
 ]
-console.table(board)
+//console.table(board)
 
 
 let redturn = true
@@ -44,19 +44,18 @@ function checkWinner() {
 
     const horizontalWinner = checkHorizontalWinner()
      const verticalWinner = checkVerticalWinner()
-    // const diagonalWinner = checkDiagonalWinner ()
+    const diagonalWinner = checkDiagonalWinner ()
     
     if(horizontalWinner) {
         return horizontalWinner
-     } else if (verticalWinner) {
-         return verticalWinner 
-     } else {
-         return null
-     }
-        
-    // } else if (diagonalWinner) {
-    //     return diagonalWinner
-
+    } else if (verticalWinner) {
+        return verticalWinner
+    } else if (diagonalWinner) {
+        return diagonalWinner
+    } else {
+        return null
+        alert ('draw')
+    }
 }
 
 
@@ -146,21 +145,22 @@ const checkHorizontalWinner = () => {
 let j = 0
 let k = 0
 let i = 0
-let rowcount = 0
+ rowcount = 0
 
 
     for (let i = 0; i < flatboard.length ; i++) {
 
        // console.log(flatboard[i])
-        if (flatboard[i] == "red")
+        if (flatboard[i] === "red")
         {
             rowcount = 1
-            let hozdif = 1
+            let hozdif = i + 1
             let vertdif = 7
             for (let m = i; m < i+3; m++) {
                 if (flatboard[m+hozdif] === "red")
                 {
                     rowcount = rowcount +1
+                    hozdif = hozdif + 1
                 }
                 else
                 {
@@ -172,6 +172,7 @@ let rowcount = 0
             if (rowcount === 4)
             {
                 console.log("red wins")
+                return "red"
             }
 
         }
@@ -195,6 +196,7 @@ let rowcount = 0
             if (rowcount === 4)
             {
                 console.log("yellow wins")
+                return "yellow"
             }
         }
     }
@@ -206,18 +208,16 @@ const checkVerticalWinner = () => {
     JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
     const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
    // console.log(flatboard) //logs the values of this string 
-let j = 0
-let k = 0
-let i = 0
-let rowcount = 0
+
+rowcount = 0
 console.log("in vertdiff")
 
     for (let i = 0; i < flatboard.length ; i++) {
-
     
-        if (flatboard[i] == "red")
+    
+        if (flatboard[i] === "red")
         {
-            rowcount = 1
+            let rowcount = 1 
             let hozdif = 1
             let vertdif = i+7
             for (let m = 0; m < 3; m++) {
@@ -225,7 +225,9 @@ console.log("in vertdiff")
                 {
                     rowcount = rowcount +1
                     vertdif = vertdif+7
-                    console.log(vertdif)
+                    console.log('in red', vertdif)
+                    //console.log('red rowcount after addtion', rowcount)
+
                 }
                 else
                 {
@@ -237,22 +239,109 @@ console.log("in vertdiff")
             if (rowcount === 4)
             {
                 console.log("red wins")
+                return "red"
+
             }
 
         }
-        else  (flatboard[i] == "yellow")
-            {
+        
+        else if (flatboard[i] ===  "yellow")
+    
+            { 
                 rowcount = 1
-                let hozdif = 1
                 let vertdif = i+7
                 for (let m = 0; m < 3; m++) {
+                    console.log('yellow rowcount before addtion', rowcount) //it is going thro this loop 
+                    //twice when the seocnd yellow is put down. but only when second yellow is placed 
+                  //console.log(rowcount)
                     if (flatboard[vertdif] === "yellow")
+                    
                     {
                         rowcount = rowcount +1
-                        vertdif = vertdif+7
-                        console.log(vertdif)
+                        vertdif = vertdif +7
+                    //console.log(vertdif)
+                    console.log('yellow rowcount after addtion', rowcount)
+
                     }
                     else
+                    {
+                        rowcount = 0
+                        break
+                    }
+    
+                }
+                //console.log (rowcount)
+                if (rowcount == 4)
+                {
+                    console.log("yellow wins")
+                    return "yellow"
+                    break
+                }
+    
+            }
+        
+    }
+    }
+
+ const checkDiagonalWinner = () => {
+
+    let board_deepcopy = //ensures we are not copying the reference values from original
+    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
+    const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
+   // console.log(flatboard) //logs the values of this string 
+
+ rowcount = 0
+    for (let i = 0; i < flatboard.length ; i++) {
+      
+        //console.log("in diagdiff")
+        if (flatboard[i] === "red")
+        {
+            let rowcount = 1 
+            let diagdiff = i+6
+            for (let m = 0; m <= 3; m++) {
+                if (flatboard[diagdiff] === "red")
+                {
+                    rowcount = rowcount + 1
+                    diagdiff = diagdiff + 6
+                   // console.log('red rowcount after addtion', rowcount)
+
+                }
+
+                else
+
+                {
+                    rowcount = 0
+                    break
+                }
+            }
+            if (rowcount === 4)
+            {
+                console.log("red wins")
+                return "red"
+            }
+
+        }
+        
+        else if (flatboard[i] ===  "yellow")
+            { 
+                let rowcount = 1
+                let hozdif = 1
+                let vertdif = i+7
+                let diagdiff = i + 6
+                //console.log('yellow rowcount vert', rowcount)
+                for (let m = 0; m < 3; m++) {
+                    if (flatboard[diagdiff] === "yellow")
+                    {
+                        //console.log('yellow rowcount vert', rowcount)
+                        rowcount = rowcount + 1
+                        diagdiff = diagdiff + 6
+                        //console.log('yellow rowcount after addtion', rowcount)
+
+                      //  console.log(diagdiff)
+                      //  console.log(rowcount)
+                    }
+                    else
+                    
                     {
                         rowcount = 0
                         break
@@ -262,6 +351,7 @@ console.log("in vertdiff")
                 if (rowcount === 4)
                 {
                     console.log("yellow wins")
+                    return "yellow"
                 }
     
             }

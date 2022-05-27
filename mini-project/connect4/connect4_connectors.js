@@ -49,7 +49,7 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
     const board = getBoard(); //board always = get board
     //if (!isValidRowOrColumn(board) || !board.every(isValidColumn)) { // chekcing board is a 2d array, links to 37-40 functions, if not showing yellow, red or null someting is an issue. 
         //throw "Expecting 'getBoard' to return a 2d array where all values match are null or one of the strings 'yellow' or 'red'. Actually received: " + JSON.stringify(board);
-    console.log(takeTurn)
+    //console.log(takeTurn)
 
     drawBoard(board);
     const winner = checkWinner();
@@ -65,6 +65,19 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
     }
+}
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", playername);
+
+
+
+function playername() {
+    let redplayer = document.getElementById("player1").value;
+    let yellowplayer = document.getElementById("player2").value;
+     redplayer.value = player1
+     yellowplayer.value = player2
+    const playerdisplay = document.getElementById(`red-${redplayer}-yellow-${yellowplayer}`)
+      // chnaging i
 }
 
 
@@ -88,16 +101,6 @@ for (let rowIndex = 0; rowIndex < 6; rowIndex++) {
         gridPosition.addEventListener("click", positionClick.bind(null, rowIndex, columnIndex));
     }
 }
-
-function playername() {
-    let redplayer = document.getElementById("player 1").value;
-    let yellowplayer = document.getElementById("player 2").value;
-     const playerdisplay = document.getElementById(`red-${redplayer}-yellow-${yellowplayer}`).innerText = playernameinputtext;
-     playerdisplay.style.display  // chnaging i
-}
-
-const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", playername);
 
 
 // Bind the click event for the reset button.
