@@ -150,17 +150,17 @@ let i = 0
 
     for (let i = 0; i < flatboard.length ; i++) {
 
-       // console.log(flatboard[i])
-        if (flatboard[i] === "red")
+       
+        console.log(flatboard[i])
+        if (flatboard[i] == "red")
         {
             rowcount = 1
-            let hozdif = i + 1
+            let hozdif = 1
             let vertdif = 7
             for (let m = i; m < i+3; m++) {
-                if (flatboard[m+hozdif] === "red")
+                if (flatboard[m+hozdif] == "red")
                 {
                     rowcount = rowcount +1
-                    hozdif = hozdif + 1
                 }
                 else
                 {
@@ -169,12 +169,11 @@ let i = 0
                 }
 
             }
-            if (rowcount === 4)
+            if (rowcount == 4)
             {
                 console.log("red wins")
                 return "red"
             }
-
         }
         else if (flatboard[i] === "yellow")
         {
@@ -291,13 +290,14 @@ console.log("in vertdiff")
    // console.log(flatboard) //logs the values of this string 
 
  rowcount = 0
-    for (let i = 0; i < flatboard.length ; i++) {
+    for (let i = 0; i < flatboard.length; i++) {
       
         //console.log("in diagdiff")
         if (flatboard[i] === "red")
         {
             let rowcount = 1 
             let diagdiff = i+6
+            console.log('in red diagdiff')
             for (let m = 0; m <= 3; m++) {
                 if (flatboard[diagdiff] === "red")
                 {
