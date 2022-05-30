@@ -43,10 +43,11 @@ console.table(board)
 function checkWinner() {
 
     const horizontalWinner = checkHorizontalWinner()
-     const verticalWinner = checkVerticalWinner()
-    const diagonalWinner = checkDiagonalWinner ()
-    const diagonalleftwinner = checkDiagonalleftwinner ()
-    
+    const verticalWinner = checkVerticalWinner()
+    const diagonalWinner = checkDiagonalWinner()
+    const diagonalleftwinner = checkDiagonalleftwinner()
+    const nowinner = checkdrawwinner()
+
     if(horizontalWinner) {
         return horizontalWinner
     } else if (verticalWinner) {
@@ -56,14 +57,44 @@ function checkWinner() {
         
     } else if (diagonalleftwinner) {
         return (diagonalleftwinner)
+    } else if (nowinner) {
+        return (nowinner)
     }
-     else {
+
+    else {
+
         return null
-        alert ('draw')
     }
 }
 
+checkdrawwinner = () => {
+    let board_deepcopy = //ensures we are not copying the reference values from original
+    JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
+    const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
+   // console.log(flatboard) //logs the values of this string 
 
+   for (i = 0; i< flatboard.length; i++){
+       const currentcell = flatboard[i]
+       if (currentcell === null) {
+           return false
+       }
+   }
+return "nobody"
+
+}
+
+
+
+// const nowinner = () => {
+
+//  let board_deepcopy = JSON.parse(JSON.stringify(board))
+// const flatboard = [].concat(...board_deepcopy)
+
+
+// for (let i = 0; i <flatboard.length; i++)
+//  if (flatboard[i] === 'red'|| 'yellow' && rowcount === 0)
+
+// }
  
     
 
@@ -156,7 +187,7 @@ let i = 0
     for (let i = 0; i < flatboard.length ; i++) {
 
        
-        console.log(flatboard[i])
+      //  console.log(flatboard[i])
         if (flatboard[i] == "red")
         {
             rowcount = 1
@@ -203,6 +234,8 @@ let i = 0
                 return "yellow"
             }
         }
+        else if (flatboard[i] === !null)
+            return 'nobody'
     }
 }
 const checkVerticalWinner = () => {

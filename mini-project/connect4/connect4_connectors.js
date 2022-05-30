@@ -66,21 +66,20 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
     }
 }
-const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", playername);
+// const submitButton = document.getElementById("submit-button");
+// submitButton.addEventListener("click", playername);
+// function plaredplayeryer1name(player1) {    
+//     document.getElementById(player1).setAttribute('name', 'w1-1');
+// }
 
 
+function redplayer() {
+redplayername = document.getElementById('player1').value
 
-function playername() {
-    let redplayer = document.getElementById("player1").value;
-    let yellowplayer = document.getElementById("player2").value;
-     redplayer.value = player1
-     yellowplayer.value = player2
-    const playerdisplay = document.getElementById(`red-${redplayer}-yellow-${yellowplayer}`)
-      // chnaging i
 }
-
-
+function yellowplayer() {
+yellowplayer = document.getElementById('player2').value
+}
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)
 function resetClick(event) { //when reset button is clicked
@@ -89,6 +88,7 @@ function resetClick(event) { //when reset button is clicked
     winnerName.innerText = ""; // removing that from a screen
     const winnerDisplay = document.getElementById("winner-display"); // clearing every winner function
     winnerDisplay.style.display = "None"; //takes out the block 
+    
     clearBoard();
 }
 
