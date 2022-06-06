@@ -7,9 +7,9 @@ let board = [
     [null, null, null, null, null, null, null]
 ]
 //console.table(board)
-
+// seting player name and displaying it on the screeen 
 function setRedPlayerName () { //function thgat is called by html
-    var playerNameDiv = document.getElementById('redplayerName'); //calling red player name
+    let playerNameDiv = document.getElementById('redplayerName'); //calling red player name
     
     playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
     
@@ -18,13 +18,17 @@ function setRedPlayerName () { //function thgat is called by html
   }
 
   function setYellowPlayerName () {
-    var playerNameDiv = document.getElementById('yellowplayerName');
+    let playerNameDiv = document.getElementById('yellowplayerName');
     
     playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
     
     // hide input field and button
     document.getElementById('divSetYellowPlayerName').style.display = 'none';
+    
   }
+
+
+
 let redturn = true
 
 // Take the row and column number between 0 and 2
@@ -96,90 +100,6 @@ checkdrawwinner = () => {
         }
         }return "nobody"
 }
-
-
-
-// const nowinner = () => {
-
-//  let board_deepcopy = JSON.parse(JSON.stringify(board))
-// const flatboard = [].concat(...board_deepcopy)
-
-
-// for (let i = 0; i <flatboard.length; i++)
-//  if (flatboard[i] === 'red'|| 'yellow' && rowcount === 0)
-
-// }
- 
-    
-
-// const checkHorizontalWinner = () => {
-//     for(row =0; row <6;  row++){
-// console.log('check row equals ', checkMatchingRow(row))
-//         if (checkMatchingRow(row)) {
-//             console.log('check row equals ', checkMatchingRow(row))
-//             if(redturn === false) {
-//                 return "red"
-//             } else {
-//                 return "yellow"
-//             }
-//         }
-//     }
-// }
-
-
-// const checkMatchingRow = () => {
-//     const firstColumn = board[row][0]
-//     const secondColumn = board[row][1]
-//     const thirdColumn = board[row][2]
-//     const fourthColumn = board[row][3]
-//     const fifthColumn = board[row][4]
-//     const sixthColumn = board[row][5]
-//     const seventhColumn = board[row][6]
-
-//  return firstColumn === secondColumn && firstColumn === thirdColumn && firstColumn === fourthColumn && firstColumn !==null ||
-//         secondColumn === thirdColumn && secondColumn === fourthColumn && secondColumn === fifthColumn && secondColumn !== null ||
-//         thirdColumn === fourthColumn && thirdColumn === fifthColumn && thirdColumn === sixthColumn && thirdColumn !==null ||
-//         fourthColumn === fifthColumn && fourthColumn === sixthColumn && fourthColumn === seventhColumn && fourthColumn !== null
-// }
-    
-    
-    // const checkVerticalWinner = () => {
-    //     for(column =0; column <7; column ++){
-    //         console.log('check column equals ', checkMatchingColumn(column))
-    
-    //         if (checkMatchingColumn(column)) {
-    //             console.log('check column equals ', checkMatchingColumn(column))
-               
-    //             if(redturn === false) {
-    //                 return "red"
-    //             } else {
-    //                 return "yellow"
-    //             }
-    //         }
-    //     }
-    // }
-    
-    // const checkMatchingColumn = () => {
-    //     const firstRow = board[0][column]
-    //     const secondRow = board[1][column]
-    //     const thirdRow = board[2][column]
-    //     const fourthRow = board[3][column]
-    //     const fifthRow = board[4][column]
-    //     const sixthRow = board[5][column]
-       
-        
-    //    return firstRow === secondRow && firstRow === thirdRow && firstRow === fourthRow && firstRow !==null ||
-    //     secondRow === thirdRow && secondRow === fourthRow && secondRow === fifthRow && secondRow !== null ||
-    //     thirdRow === fourthRow && thirdRow === fifthRow && thirdRow === sixthRow && thirdRow !==null 
-        
-    // }
-    
-    
-
- 
- 
-// flatboard.forEach(( 
-    
 
 
 // a for loop, starting at 0, checks thro all the values, adding one each time, when it finds a value it changes the value of i to =
@@ -460,49 +380,6 @@ for (let i=0; i<flatboard.length; i++)
     }
  }
 
-        /*
-          j=i ; 
-         {
-           for (let i = 0; i < flatboard.length ; i++) {
-                 k=i
-           }
-            function diff (j, k) {
-               if (k> j) {
-                   return k-j
-               }else {
-                        return j-k
-               }
-           }
-            if (diff === 1 && redturn=== false){
-                return "red"
-            } else {
-                return "yellow"
-            }
-        }
-        */
-      
-
-//for (let i =0; i <flatboard.options.length;  i++){
-
-
-
-
-
-// 
-
-
-
-
-//         if(redturn === false && (a[i] === 4))
-//          {
-//             return "red"
-//         } else if  {
-//             return "yellow"
-//         }
-//     }
-//         break;
-
-
 
 
 
@@ -533,7 +410,10 @@ function resetGame(clearboard) {
     [null, null, null, null, null, null, null]
 ]
     console.table(board)
+    let setRedPlayerName
 }
+
+
 
 
 

@@ -85,6 +85,14 @@ function resetClick(event) { //when reset button is clicked
     clearBoard();
 }
 
+// function resetNames(event) {
+//     resetNames();
+//     const RedplayerNameInput = document.getElementById("RedplayerNameInput");
+//     RedplayerNameInput.innerText = "";
+
+//     const 
+
+// }
 
 
 // Bind the click events for the grid.
