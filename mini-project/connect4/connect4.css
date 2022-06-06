@@ -43,14 +43,25 @@ h2 {
 
 #redplayerName{
     font-family: Helvetica;
+    color: red;
+    font-size: 3vw;
+    -webkit-text-stroke: 0.1vw black;
 }
 
 #yellowplayerName{
     font-family: Helvetica;
+    font-size: 3vw;
+    color: yellow;
+    -webkit-text-stroke: 0.1vw black;
 }
 
-fieldset{
-    display: inline-block
+.playernames{
+    margin: auto;
+    display: inline-block;
+    border: 1vw groove lightskyblue;
+    padding: 1vw;
+    font-family: Helvetica;
+    
 }
 
 .marker {
@@ -71,4 +82,17 @@ body {
 
 #reset-button{
     margin-top: 10px;
+}
+#playernames{
+    margin: 1;
+}
+
+.container {
+    display:flex;
+    
+}
+.child {
+        display: inline-block;
+        vertical-align: middle;
+      
 }

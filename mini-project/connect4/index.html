@@ -13,30 +13,35 @@
           
   <h1>Connect 4</h1>
   <p id="winner-display">The winner is <span id="winner-name"></span></p>
-  
-      <fieldset>
+
+  <div class="container">
+            <div class='playernames'>
            <legend> Player Names</legend>
-           Red Player name: <b><div id="redplayerName"></div></b>
+            <b><div id="redplayerName">Red Player:</div></b>
            <br />
            <div id="divSetRedPlayerName">
              <input type="text" id="RedplayerNameInput" placeholder="Enter red player name" />
              <button onclick="setRedPlayerName();">Set player name</button>
            </div>
            <br />
-           Yellow Player name: <b><div id="yellowplayerName"></div></b>
+            <b><div id="yellowplayerName">Yellow Player:</div></b>
            <br />
            <div id="divSetYellowPlayerName">
              <input type="text" id="YellowplayerNameInput" placeholder="Enter Yellow player name" />
              <button onclick="setYellowPlayerName();">Set player name</button>
            </div>
-           
-      </fieldset>
+           <button id="reset-button">Reset Game</button>
+      </div>
+
       <br/>
 
 
  
       <br/>
+     
       <div id="grid">
+
+      <div class='child'>
     <div class="row"
          id="row-0">
       <div class="column"
@@ -144,15 +149,12 @@
                id="row-5-column-6"></div>
             </div>
       </div>
+</div>
 
-  <button id="reset-button">Reset</button>
+ 
   <br>
   <br>
-  <form>
-       <fieldset>
-            <legend> Player Names</legend>
-         
-       </fieldset>
+
        
   </form>
 

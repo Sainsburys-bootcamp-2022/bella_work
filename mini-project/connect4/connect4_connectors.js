@@ -73,13 +73,6 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
 // }
 
 
-function redplayer() {
-redplayername = document.getElementById('player1').value
-
-}
-function yellowplayer() {
-yellowplayer = document.getElementById('player2').value
-}
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)
 function resetClick(event) { //when reset button is clicked
