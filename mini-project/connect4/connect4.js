@@ -8,7 +8,23 @@ let board = [
 ]
 //console.table(board)
 
+function setRedPlayerName () { //function thgat is called by html
+    var playerNameDiv = document.getElementById('redplayerName'); //calling red player name
+    
+    playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
+    
+    // hide input field and button
+    document.getElementById('divSetRedPlayerName').style.display = 'none';
+  }
 
+  function setYellowPlayerName () {
+    var playerNameDiv = document.getElementById('yellowplayerName');
+    
+    playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
+    
+    // hide input field and button
+    document.getElementById('divSetYellowPlayerName').style.display = 'none';
+  }
 let redturn = true
 
 // Take the row and column number between 0 and 2
@@ -77,10 +93,8 @@ checkdrawwinner = () => {
        const currentcell = flatboard[i]
        if (currentcell === null) {
            return false
-       }
-   }
-return "nobody"
-
+        }
+        }return "nobody"
 }
 
 

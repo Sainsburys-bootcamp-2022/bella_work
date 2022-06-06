@@ -41,6 +41,17 @@ h2 {
     justify-content: center;
 }
 
+#redplayerName{
+    font-family: Helvetica;
+}
+
+#yellowplayerName{
+    font-family: Helvetica;
+}
+
+fieldset{
+    display: inline-block
+}
 
 .marker {
     width: 50px;
