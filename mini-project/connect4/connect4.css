@@ -2,27 +2,28 @@
     width: 2.2vw;
     height: 2.2vw;
     margin: 0.2vw;
-    border: 1vw solid transparent;
+    border: 1.01vw solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%/50%;
     font-size: 4vw;
-    padding: 0.7vw;
+    
+    padding: 0.75vw;
     
 }
 
 #grid
 {
     margin: auto;
-    border: 0.7vw black solid;
+    border: 0.7vw rgb(30, 13, 216) solid;
     width: 42vw;
     height: 36vw;
     border-radius: 30px;
     align-items: center;
     justify-content: center;
-    padding: 0.60vw;
-    background: radial-gradient(circle, transparent 2.6vw, #007fff 1.3vw, #007fff 1.3vw, #1f90ff 1.3vw, #1f90ff 3.5vw, #007fff) center top/ 6.15vw 6.15vw;
+    padding: 0.80vw;
+    background: radial-gradient(circle, transparent 2.70vw, #007fff 1.5vw, #007fff 1.4vw, #1f90ff 1.5vw, #1f90ff 2.2vw, #007fff) center top/ 6.15vw 6.25vw;
 }
 
 h1{
@@ -61,7 +62,7 @@ h2 {
 .playernames{
     margin: auto;
     display: inline-block;
-    border: 1vw groove lightskyblue;
+    border: 1vw groove red;
     padding: 1vw;
     font-family: Helvetica;
     font-size: medium;
@@ -74,10 +75,11 @@ h2 {
 
 #winner-display {
     display: none;
-    background-color: red;
-    color: white;
+    color: black;
     align-items: center;
     justify-content: center;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -98,6 +100,7 @@ body {
     font-size: 3vw;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
+    font-family:  Helvetica;
    
 
 }
@@ -112,7 +115,8 @@ p {
     font-size: 3vw;
     color: yellow;
     -webkit-text-stroke: 0.1vw black;
-    padding: 0.5vw;
+    padding: 1vw;
+    font-family:  Helvetica;
     
 
 }
@@ -121,5 +125,5 @@ p {
 }
 img {
     height: 10vw;
-    width: 50vw;
+    width: 30vw;
   }
