@@ -16,14 +16,14 @@
 #grid
 {
     margin: auto;
-    border: 0.7vw rgb(30, 13, 216) solid;
+    border: 0.9vw rgb(21, 0, 255) solid;
     width: 42vw;
     height: 36vw;
     border-radius: 30px;
     align-items: center;
     justify-content: center;
     padding: 0.5vw;
-    background: radial-gradient(circle, transparent 2.35vw, #007fff) center top/ 6.05vw 6.19vw;
+    background: radial-gradient(circle, transparent 2.35vw, #0066fff4) center top/ 6.05vw 6.19vw;
 }
 
 h1{

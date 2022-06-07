@@ -68,9 +68,9 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
         const winnerName = document.getElementById("winner-name"); //changes the (document =HTML ) points to HTMl and gets the elemnt
         winnerName.innerText = winner;// winner name - gets check winner function inner text (red/yellow = winner value)
         
-        if (winnerName.innerText === "red")
+        if (winnerName.innerText === "red" && document.getElementById('RedplayerNameInput').value !== "")
         winnerName.innerText = document.getElementById('RedplayerNameInput').value
-         else if (winnerName.innerText === "yellow")
+         else if (winnerName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
          winnerName.innerText = document.getElementById('YellowplayerNameInput').value
 
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html
