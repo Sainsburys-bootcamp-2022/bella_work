@@ -13,6 +13,7 @@ function setRedPlayerName () { //function thgat is called by html
     
     playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
     
+    document.getElementById('redplayerName').style.visibility = "visible"
     
   }
 
@@ -414,7 +415,21 @@ function resetGame(clearboard) {
 ]
     console.table(board)
     
-}
+   
+  //block of text is hidden till event lostener
+    document.getElementById("RedplayerNameInput").value = ""
+    document.getElementById("RedplayerNameInput").value = ""
+    
+
+    document.getElementById("redplayerName").style.visibility = "hidden"
+
+    document.getElementById("redplayerName").value = ""
+    document.getElementById("yellowplayerName").style.visibility = "hidden"
+     };
+    
+   
+
+
 
 
 
