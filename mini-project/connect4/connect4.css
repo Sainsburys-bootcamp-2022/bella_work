@@ -1,7 +1,7 @@
 .column {
     width: 2.85vw;
-    height: 2.27vw;
-    margin: 0.1vw;
+    height: 2.2vw;
+    margin: 0.15vw;
     border: 1vw solid black;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
     border-radius: 30px;
     align-items: center;
     justify-content: center;
-    padding: 0.80vw;
+    padding: 0.5vw;
     background: radial-gradient(circle, transparent 2.35vw, #007fff 1vw, #007fff 1.4vw, #1f90ff 1.9vw, #1f90ff 2.8vw, #007fff) center top/ 6.05vw 6.19vw;
 }
 
