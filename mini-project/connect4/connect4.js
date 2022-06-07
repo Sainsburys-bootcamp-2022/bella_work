@@ -104,14 +104,14 @@ checkdrawwinner = () => {
 //  make the index value of, repeat this until we have ran the loop 4 times. 
 
 const checkHorizontalWinner = () => {
+    let rightboard = [board[0],[14],[21],[28],[35]]
+    let leftboard = [board [6],[13],[20],[27],[34],[41]]
 
     let board_deepcopy = //ensures we are not copying the reference values from original
     JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
     const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
    // console.log(flatboard) //logs the values of this string 
 
-   let rightboard = flatboard[0,7,14,21,28,35]
-    let leftboard = flatboard[6,13,20,27,34,41]
  rowcount = 0
 
 
@@ -136,7 +136,7 @@ const checkHorizontalWinner = () => {
                 }
 
             }
-            if (rowcount == 4 && flatboard !== rightboard && leftboard)
+            if (rowcount == 4 && board !== rightboard && leftboard)
             {
                 console.log("red wins")
                 return "red"
@@ -159,7 +159,7 @@ const checkHorizontalWinner = () => {
                 }
 
             }
-            if (rowcount === 4 && flatboard !== rightboard && leftboard)
+            if (rowcount === 4 && board !== rightboard && leftboard)
             {
                 console.log("yellow wins")
                 return "yellow"
@@ -170,7 +170,8 @@ const checkHorizontalWinner = () => {
     }
 }
 const checkVerticalWinner = () => {
-
+    let rightboard = [board[0],[14],[21],[28],[35]]
+    let leftboard = [board [6],[13],[20],[27],[34],[41]]
    
     let board_deepcopy = //ensures we are not copying the reference values from original
     JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
@@ -204,7 +205,7 @@ rowcount = 0
                 }
 
             }
-            if (rowcount === 4)
+            if (rowcount === 4 && board !== rightboard && leftboard)
             {
                 console.log("red wins")
                 return "red"
@@ -239,7 +240,7 @@ rowcount = 0
     
                 }
                 //console.log (rowcount)
-                if (rowcount == 4)
+                if (rowcount == 4 && board !== rightboard && leftboard)
                 {
                     console.log("yellow wins")
                     return "yellow"
@@ -252,13 +253,14 @@ rowcount = 0
     }
 
  const checkDiagonalWinner = () => {
+    let rightboard = [board[0],[14],[21],[28],[35]]
+    let leftboard = [board [6],[13],[20],[27],[34],[41]]
 
     let board_deepcopy = //ensures we are not copying the reference values from original
     JSON.parse(JSON.stringify(board)) //copies and strifies the object then converts it back into an object 
     const flatboard = [].concat(...board_deepcopy) //turns the array of objects into a string 
    // console.log(flatboard) //logs the values of this string 
-   let rightboard = flatboard[0,7,14,21,28,35]
-   let leftboard = flatboard[6,13,20,27,34,41]
+   
  rowcount = 0
     for (let i = 0; i < flatboard.length; i++) {
       
@@ -284,7 +286,7 @@ rowcount = 0
                     break
                 }
             }
-            if (rowcount === 4  && flatboard !== rightboard && leftboard)
+            if (rowcount === 4 && board !== rightboard && leftboard )
             {
                 console.log("red wins")
                 return "red"
@@ -318,7 +320,7 @@ rowcount = 0
                     }
     
                 }
-                if (rowcount === 4 && flatboard !== rightboard && leftboard)
+                if (rowcount === 4 && board !== rightboard && leftboard )
                 {
                     console.log("yellow wins")
                     return "yellow"
@@ -330,11 +332,13 @@ rowcount = 0
     }
 
 const checkDiagonalleftwinner = () => {
+
+    let rightboard = [board[0],[14],[21],[28],[35]]
+    let leftboard = [board [6],[13],[20],[27],[34],[41]]
+
     let board_deepcopy = JSON.parse(JSON.stringify(board))
     const flatboard = [].concat(...board_deepcopy)
 
-    let rightboard = flatboard[0,7,14,21,28,35]
-    let leftboard = flatboard[6,13,20,27,34,41]
 
     rowcount = 0 
 
@@ -352,7 +356,7 @@ for (let i=0; i<flatboard.length; i++)
             rowcount = 0
             break
         }
-        if (rowcount === 4  && flatboard !== rightboard && leftboard ) {
+        if (rowcount === 4 && board !== rightboard && leftboard) {
             console.log ('red wins')
             return "red"
         }
@@ -374,7 +378,7 @@ for (let i=0; i<flatboard.length; i++)
             break
         }
     }
-        if (rowcount === 4  && flatboard !== rightboard && leftboard){
+        if (rowcount === 4 && board !== rightboard && leftboard){
             return "yellow"
         }
 
@@ -409,7 +413,7 @@ function resetGame(clearboard) {
     [null, null, null, null, null, null, null]
 ]
     console.table(board)
-    let setRedPlayerName
+    
 }
 
 
