@@ -13,8 +13,7 @@ function setRedPlayerName () { //function thgat is called by html
     
     playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
     
-    // hide input field and button
-    document.getElementById('divSetRedPlayerName').style.display = 'none';
+    
   }
 
   function setYellowPlayerName () {
@@ -22,9 +21,7 @@ function setRedPlayerName () { //function thgat is called by html
     
     playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
     
-    // hide input field and button
-    document.getElementById('divSetYellowPlayerName').style.display = 'none';
-    
+   
   }
 
 

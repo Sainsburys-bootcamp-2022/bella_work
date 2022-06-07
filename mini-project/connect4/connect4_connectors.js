@@ -53,15 +53,26 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
 
     drawBoard(board);
     const winner = checkWinner();
+
     if (winner) { 
         // if not a string or the string  or not a string of red yellow or nobody then = false and throw error 
         if (typeof winner !== "string" || !["red", "yellow", "nobody"].includes(winner)) {
             throw "Expecting 'checkWinner' to return null or one of the strings 'yellow', 'red' or 'nobody'. Actually received: " + winner;
          // bings back an error message
         }
-        
+        // if (winner === red)
+        //       winner = document.getElementById('RedplayerNameInput').value
+        // else if (winner === yellow)
+        //       winner = document.getElementById('YellowplayerNameInput').value
+
         const winnerName = document.getElementById("winner-name"); //changes the (document =HTML ) points to HTMl and gets the elemnt
         winnerName.innerText = winner;// winner name - gets check winner function inner text (red/yellow = winner value)
+        
+        if (winnerName.innerText === "red")
+        winnerName.innerText = document.getElementById('RedplayerNameInput').value
+         else if (winnerName.innerText === "yellow")
+         winnerName.innerText = document.getElementById('YellowplayerNameInput').value
+
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
     }
