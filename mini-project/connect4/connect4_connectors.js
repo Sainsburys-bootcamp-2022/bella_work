@@ -28,7 +28,7 @@ function drawBoard(board) {
             if (!board[rowIndex][columnIndex]) {  // if board doesnt have a thing in then u can place it 
                 continue;
             }
-            const cellText = board[rowIndex][columnIndex] === "red" ? "🔴" : "🟡"; // variable cell text = point on board selected, they = red if it is red and if not it will show yello, ? is testing what si written, allows us to use true and false to put colours in. 
+            const cellText = board[rowIndex][columnIndex] === "red" ? "❤️" : "💛"; // variable cell text = point on board selected, they = red if it is red and if not it will show yello, ? is testing what si written, allows us to use true and false to put colours in. 
             document.getElementById(`row-${rowIndex}-column-${columnIndex}`).innerText = cellText; // chnaging inner text to equal variable cell text based on column and row index, placing the counter on the boards
         }
     }
