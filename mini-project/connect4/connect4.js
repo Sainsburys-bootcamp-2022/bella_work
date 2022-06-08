@@ -1,3 +1,7 @@
+
+
+
+
 let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
@@ -16,6 +20,7 @@ function setRedPlayerName () { //function thgat is called by html
     document.getElementById('redplayerName').style.visibility = "visible"
     
   }
+ 
 
   function setYellowPlayerName () {
     let playerNameDiv = document.getElementById('yellowplayerName');
@@ -457,3 +462,4 @@ if (typeof exports === 'object') {
     console.log("Running in Browser")
 }
     
+module.exports = {setRedPlayerName, setYellowPlayerName}

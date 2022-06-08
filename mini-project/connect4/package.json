@@ -1,0 +1,14 @@
+{
+  "name": "connect4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connect4.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
