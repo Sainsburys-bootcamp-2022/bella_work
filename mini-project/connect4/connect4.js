@@ -435,12 +435,17 @@ function resetGame(clearboard) {
    
 
 
-// helper functions, let you know when something has broken. 
+// helper functions, let you know when something has broken. check that the array that has been put in is a length of 6
 function isValidRowOrColumn(array) {
     return Array.isArray(array) && array.length === 6;
 }
 
+// checks that the column array is an array made of red yellow and null
+function isValidColumn(columnArray) {
+    return columnArray.every(function (item) { return ["red", "yellow", null].includes(item); });
+}
 
+//isValidRowOrColumn(columnArray) && 
 
 
 // Return the current board state with either a "nought" or a "cross" in
@@ -466,4 +471,4 @@ if (typeof exports === 'object') {
 }
     
 
-module.exports = {isValidRowOrColumn}
+module.exports = {isValidRowOrColumn, isValidColumn}

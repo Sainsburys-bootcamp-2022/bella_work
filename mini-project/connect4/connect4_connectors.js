@@ -36,9 +36,7 @@ function drawBoard(board) {
 
 
 
-function isValidColumn(columnArray) {
-    return isValidRowOrColumn(columnArray) && columnArray.every(function (item) { return ["red", "yellow", null].includes(item); });
-}
+
 
 // A grid position was clicked call the game's turn function, redraw and then check for a winner.
 function positionClick(rowIndex, columnIndex, event) { // check row column index based on event of clicking
