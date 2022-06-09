@@ -1,7 +1,5 @@
 
 
-
-
 let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
@@ -33,10 +31,14 @@ function setRedPlayerName () { //function thgat is called by html
 
 
 let redturn = true
+let winnerStatus = false
 
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
+    if (winnerStatus === true){
+        return
+    }
     console.log(`takeTurn was called with row: ${row}, column: ${column}`);
     console.log(redturn);
     for (let i=5; i>=0;  i--){ //i = number of column, wiill loop whilst i >= 0 will loop but it runs thro all iteration until its successful. the i ensures it starts at the bottom.
@@ -51,6 +53,8 @@ function takeTurn(row, column) {
         break
     }
     else {
+        
+
     }
     
 }
@@ -145,6 +149,7 @@ const checkHorizontalWinner = () => {
             if (rowcount == 4 && board !== rightboard && leftboard)
             {
                 console.log("red wins")
+                winnerStatus = true
                 return "red"
             }
         }
@@ -168,6 +173,7 @@ const checkHorizontalWinner = () => {
             if (rowcount === 4 && board !== rightboard && leftboard)
             {
                 console.log("yellow wins")
+                winnerStatus = true
                 return "yellow"
             }
         }
@@ -214,6 +220,7 @@ rowcount = 0
             if (rowcount === 4 && board !== rightboard && leftboard)
             {
                 console.log("red wins")
+                winnerStatus = true
                 return "red"
 
             }
@@ -249,6 +256,7 @@ rowcount = 0
                 if (rowcount == 4 && board !== rightboard && leftboard)
                 {
                     console.log("yellow wins")
+                    winnerStatus = true
                     return "yellow"
                     break
                 }
@@ -295,6 +303,7 @@ rowcount = 0
             if (rowcount === 4 && board !== rightboard && leftboard )
             {
                 console.log("red wins")
+                winnerStatus = true
                 return "red"
             }
 
@@ -329,6 +338,7 @@ rowcount = 0
                 if (rowcount === 4 && board !== rightboard && leftboard )
                 {
                     console.log("yellow wins")
+                    winnerStatus = true
                     return "yellow"
                 }
     
@@ -364,6 +374,7 @@ for (let i=0; i<flatboard.length; i++)
         }
         if (rowcount === 4 && board !== rightboard && leftboard) {
             console.log ('red wins')
+            winnerStatus = true
             return "red"
         }
      }
@@ -385,6 +396,7 @@ for (let i=0; i<flatboard.length; i++)
         }
     }
         if (rowcount === 4 && board !== rightboard && leftboard){
+            winnerStatus = true
             return "yellow"
         }
 
