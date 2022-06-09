@@ -1,11 +1,11 @@
-// Validate academite functions are available
-const functions = ["takeTurn", "getBoard", "checkWinner", "resetGame"];
-for (f of functions) { // f= index 
-    const functionObject = window[f]; //looping thro the fucntion objects
-    if (typeof functionObject !== "function") {  //
-        throw `Looks like expected function '${f}' is missing. Double check the function signatures from academy.js are still present and unaltered.`;
-    }// if the ${} any function is missing will define that that fucntion is not there. 
-}
+// // Validate academite functions are available
+// const functions = ["takeTurn", "getBoard", "checkWinner", "resetGame"];
+// for (f of functions) { // f= index 
+//     const functionObject = window[f]; //looping thro the fucntion objects
+//     if (typeof functionObject !== "function") {  //
+//         throw `Looks like expected function '${f}' is missing. Double check the function signatures from academy.js are still present and unaltered.`;
+//     }// if the ${} any function is missing will define that that fucntion is not there. 
+// }
 
 // checking those functions are there going to use:' "takeTurn", "getBoard", "checkWinner", "resetGame"
 
@@ -34,10 +34,7 @@ function drawBoard(board) {
     }
 }
 
-// helper functions, let you know when something has broken. 
-function isValidRowOrColumn(array) {
-    return Array.isArray(array) && array.length === 6;
-}
+
 
 function isValidColumn(columnArray) {
     return isValidRowOrColumn(columnArray) && columnArray.every(function (item) { return ["red", "yellow", null].includes(item); });
@@ -134,4 +131,5 @@ if (typeof exports === 'object') {
 } else {
     console.log("Running in Browser")
 }
+
 

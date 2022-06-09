@@ -417,7 +417,7 @@ function resetGame(clearboard) {
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
-]
+    ]
     console.table(board)
     
    
@@ -430,12 +430,15 @@ function resetGame(clearboard) {
 
     document.getElementById("redplayerName").value = ""
     document.getElementById("yellowplayerName").style.visibility = "hidden"
-     };
+};
     
    
 
 
-
+// helper functions, let you know when something has broken. 
+function isValidRowOrColumn(array) {
+    return Array.isArray(array) && array.length === 6;
+}
 
 
 
@@ -462,4 +465,5 @@ if (typeof exports === 'object') {
     console.log("Running in Browser")
 }
     
-module.exports = {setRedPlayerName, setYellowPlayerName}
+
+module.exports = {isValidRowOrColumn}
