@@ -129,7 +129,6 @@ p {
     padding: 1vw;
     font-family: Helvetica;
 
-
 }
 
 #playernameHeader {
@@ -140,8 +139,18 @@ img {
     height: 10vw;
     width: 30vw;
 }
-#show-whose-turn {
-        font-size: 0.3vh;
-        letter-spacing: 1vh;
-        color: white;
+#naming-player-turn {
+    font-size: 20pt;
+    font-family:monospace;
+    color: yellow;
+    -webkit-text-stroke: 0.05vw black;
+
+
+}
+
+#player-name-turn{
+    color: rgb(255, 0, 0);
+    font-size: large;
+    -webkit-text-stroke: 0.05vw black;
+    font-size:20pt
 }

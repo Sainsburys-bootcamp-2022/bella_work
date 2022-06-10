@@ -51,7 +51,7 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "red"
             redturn = false
-            document.getElementById("player-name-turn").innerText = "Yellow"
+            document.getElementById("player-name-turn").innerText = "Yellow's"
             break
         } 
         
@@ -59,7 +59,7 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "yellow"
             redturn = true
-            document.getElementById("player-name-turn").innerText = "Red"
+            document.getElementById("player-name-turn").innerText = "Red's"
             break
         }
         else {
@@ -402,7 +402,7 @@ const checkDiagonalleftwinner = () => {
 // 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
-
+    document.getElementById("show-whose-turn").style.display = "none"
     board =
         [[null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null],
