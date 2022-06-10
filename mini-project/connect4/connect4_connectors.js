@@ -1,11 +1,3 @@
-// // Validate academite functions are available
-// const functions = ["takeTurn", "getBoard", "checkWinner", "resetGame"];
-// for (f of functions) { // f= index 
-//     const functionObject = window[f]; //looping thro the fucntion objects
-//     if (typeof functionObject !== "function") {  //
-//         throw `Looks like expected function '${f}' is missing. Double check the function signatures from academy.js are still present and unaltered.`;
-//     }// if the ${} any function is missing will define that that fucntion is not there. 
-// }
 
 // checking those functions are there going to use:' "takeTurn", "getBoard", "checkWinner", "resetGame"
 
@@ -43,17 +35,17 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
     takeTurn(rowIndex, columnIndex); //function using row index and column index
     const board = getBoard(); //board always = get board
     //if (!isValidRowOrColumn(board) || !board.every(isValidColumn)) { // chekcing board is a 2d array, links to 37-40 functions, if not showing yellow, red or null someting is an issue. 
-        //throw "Expecting 'getBoard' to return a 2d array where all values match are null or one of the strings 'yellow' or 'red'. Actually received: " + JSON.stringify(board);
+    //throw "Expecting 'getBoard' to return a 2d array where all values match are null or one of the strings 'yellow' or 'red'. Actually received: " + JSON.stringify(board);
     //console.log(takeTurn)
 
     drawBoard(board);
     const winner = checkWinner();
 
-    if (winner) { 
+    if (winner) {
         // if not a string or the string  or not a string of red yellow or nobody then = false and throw error 
         if (typeof winner !== "string" || !["red", "yellow", "nobody"].includes(winner)) {
             throw "Expecting 'checkWinner' to return null or one of the strings 'yellow', 'red' or 'nobody'. Actually received: " + winner;
-         // bings back an error message
+            // bings back an error message
         }
         // if (winner === red)
         //       winner = document.getElementById('RedplayerNameInput').value
@@ -62,11 +54,11 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
 
         const winnerName = document.getElementById("winner-name"); //changes the (document =HTML ) points to HTMl and gets the elemnt
         winnerName.innerText = winner;// winner name - gets check winner function inner text (red/yellow = winner value)
-        
+
         if (winnerName.innerText === "red" && document.getElementById('RedplayerNameInput').value !== "")
-        winnerName.innerText = document.getElementById('RedplayerNameInput').value
-         else if (winnerName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
-         winnerName.innerText = document.getElementById('YellowplayerNameInput').value
+            winnerName.innerText = document.getElementById('RedplayerNameInput').value
+        else if (winnerName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
+            winnerName.innerText = document.getElementById('YellowplayerNameInput').value
 
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
@@ -87,7 +79,7 @@ function resetClick(event) { //when reset button is clicked
     winnerName.innerText = ""; // removing that from a screen
     const winnerDisplay = document.getElementById("winner-display"); // clearing every winner function
     winnerDisplay.style.display = "None"; //takes out the block 
-    
+
     clearBoard();
 }
 

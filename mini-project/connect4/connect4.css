@@ -8,13 +8,12 @@
     align-items: center;
     border-radius: 50%/50%;
     font-size: 2.1vw;
-    
+
     padding: 0.77vw;
-    
+
 }
 
-#grid
-{
+#grid {
     margin: auto;
     border: 0.9vw rgb(21, 0, 255) solid;
     width: 42vw;
@@ -26,16 +25,18 @@
     background: radial-gradient(circle, transparent 2.35vw, #0066fff4) center top/ 6.05vw 6.19vw;
 }
 
-h1{
+h1 {
     font-size: large;
     font-family: Helvetica;
     font-size: 4vw;
 }
+
 h2 {
     font-size: large;
     font-family: Helvetica;
     color: rgb(37, 118, 189);
 }
+
 .row {
     width: 5 vw;
     margin: auto;
@@ -45,21 +46,21 @@ h2 {
     justify-content: center;
 }
 
-#redplayerName{
+#redplayerName {
     font-family: Helvetica;
     color: red;
     font-size: 3vw;
     -webkit-text-stroke: 0.1vw black;
 }
 
-#yellowplayerName{
+#yellowplayerName {
     font-family: Helvetica;
     font-size: 3vw;
     color: yellow;
     -webkit-text-stroke: 0.1vw black;
 }
 
-.playernames{
+.playernames {
     margin: auto;
     display: inline-block;
     border: 1vw groove red;
@@ -87,43 +88,46 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-#reset-button{
+#reset-button {
     margin-top: 10px;
 }
 
 .container {
-    display:flex;   
+    display: flex;
 }
 
-#PlayerHeader{
+#PlayerHeader {
     color: red;
     font-size: 3vw;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
-    font-family:  Helvetica;
-   
+    font-family: Helvetica;
+
 
 }
+
 p {
     padding: 0.6vw;
-    display:inline;
-    float:inline-end;
-    
-   }
+    display: inline;
+    float: inline-end;
 
-#NameHeader{
+}
+
+#NameHeader {
     font-size: 3vw;
     color: yellow;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
-    font-family:  Helvetica;
-    
+    font-family: Helvetica;
+
 
 }
-#playernameHeader{
+
+#playernameHeader {
     font-size: 3vw;
 }
+
 img {
     height: 10vw;
     width: 30vw;
-  }
+}
