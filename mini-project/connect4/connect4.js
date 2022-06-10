@@ -51,7 +51,11 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "red"
             redturn = false
-            document.getElementById("player-name-turn").innerText = "Yellow's"
+           if (document.getElementById('RedplayerNameInput').value !== ""){
+                 document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value }
+                 else 
+                 document.getElementById("player-name-turn").innerText = "yellow"
+
             break
         } 
         
@@ -59,7 +63,10 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "yellow"
             redturn = true
-            document.getElementById("player-name-turn").innerText = "Red's"
+            if (document.getElementById('YellowplayerNameInput').value !== ""){
+                document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value }
+                else 
+                document.getElementById("player-name-turn").innerText = "red"
             break
         }
         else {

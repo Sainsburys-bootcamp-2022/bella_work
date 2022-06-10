@@ -110,8 +110,7 @@ body {
     font-size: 3vw;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
-    font-family: Helvetica;
-
+    font-family:Verdana
 
 }
 
@@ -127,7 +126,7 @@ p {
     color: yellow;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
-    font-family: Helvetica;
+    font-family: Verdana;
 
 }
 
