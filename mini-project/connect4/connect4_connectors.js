@@ -39,6 +39,20 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
     //console.log(takeTurn)
 
     drawBoard(board);
+
+    // const displayName = takeTurn();
+
+    // if (displayName)
+    // {
+    // const displayPlayerName = document.getElementById("players-name-turn");
+    // displayPlayerName.innertext = displayName;
+    // if (redturn === false && document.getElementById('RedplayerNameInput').value !== ""){
+    //     displayName.innerText = document.getElementById('RedplayerNameInput').value
+    // }
+    // else if (redturn === true && document.getElementById('YellowplayerNameInput').value !== "")
+    //     displayName.innerText = document.getElementById('YellowplayerNameInput').value
+        
+
     const winner = checkWinner();
 
     if (winner) {
@@ -47,10 +61,6 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
             throw "Expecting 'checkWinner' to return null or one of the strings 'yellow', 'red' or 'nobody'. Actually received: " + winner;
             // bings back an error message
         }
-        // if (winner === red)
-        //       winner = document.getElementById('RedplayerNameInput').value
-        // else if (winner === yellow)
-        //       winner = document.getElementById('YellowplayerNameInput').value
 
         const winnerName = document.getElementById("winner-name"); //changes the (document =HTML ) points to HTMl and gets the elemnt
         winnerName.innerText = winner;// winner name - gets check winner function inner text (red/yellow = winner value)
@@ -64,12 +74,6 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
     }
 }
-// const submitButton = document.getElementById("submit-button");
-// submitButton.addEventListener("click", playername);
-// function plaredplayeryer1name(player1) {    
-//     document.getElementById(player1).setAttribute('name', 'w1-1');
-// }
-
 
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)

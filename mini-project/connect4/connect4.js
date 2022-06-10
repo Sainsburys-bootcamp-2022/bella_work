@@ -34,9 +34,12 @@ function setYellowPlayerName() {
 let redturn = true
 let winnerStatus = false
 
+document.getElementById("show-whose-turn").style.display = "none";
+
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
+    document.getElementById("show-whose-turn").style.display = "block"
     if (winnerStatus === true) {
         return
     }
@@ -45,12 +48,18 @@ function takeTurn(row, column) {
     for (let i = 5; i >= 0; i--) { //i = number of column, wiill loop whilst i >= 0 will loop but it runs thro all iteration until its successful. the i ensures it starts at the bottom.
 
         if (board[i][column] === null && redturn === true) {
+            console.log(takeTurn)
             board[i][column] = "red"
             redturn = false
+            document.getElementById("player-name-turn").innerText = "Yellow"
             break
-        } else if (board[i][column] === null) {
+        } 
+        
+        else if (board[i][column] === null) {
+            console.log(takeTurn)
             board[i][column] = "yellow"
             redturn = true
+            document.getElementById("player-name-turn").innerText = "Red"
             break
         }
         else {
@@ -62,6 +71,7 @@ function takeTurn(row, column) {
     console.table(board)
 }
 
+//const submitbtn = documentget elements by idnexfunction bu
 
 // Return either "noughts", "crosses" or "nobody" if the game is over.
 // Otherwise return null to continue playing.
@@ -453,5 +463,4 @@ if (typeof exports === 'object') {
     console.log("Running in Browser")
 }
 
-
-module.exports = { isValidRowOrColumn, isValidColumn }
+module.exports = {isValidRowOrColumn, isValidColumn}
