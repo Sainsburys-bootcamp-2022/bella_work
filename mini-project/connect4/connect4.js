@@ -40,9 +40,10 @@ document.getElementById("show-whose-turn").style.display = "none";
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
     document.getElementById("show-whose-turn").style.display = "block"
+    document.getElementById("player-name-turn").style.display = "block"
     if (winnerStatus === true) {
         return
-    }
+    } 
     console.log(`takeTurn was called with row: ${row}, column: ${column}`);
     console.log(redturn);
     for (let i = 5; i >= 0; i--) { //i = number of column, wiill loop whilst i >= 0 will loop but it runs thro all iteration until its successful. the i ensures it starts at the bottom.
@@ -52,7 +53,7 @@ function takeTurn(row, column) {
             board[i][column] = "red"
             redturn = false
            if (document.getElementById('RedplayerNameInput').value !== ""){
-                 document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value }
+                 document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value }
                  else 
                  document.getElementById("player-name-turn").innerText = "yellow"
 
@@ -64,7 +65,7 @@ function takeTurn(row, column) {
             board[i][column] = "yellow"
             redturn = true
             if (document.getElementById('YellowplayerNameInput').value !== ""){
-                document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value }
+                document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value }
                 else 
                 document.getElementById("player-name-turn").innerText = "red"
             break
@@ -426,11 +427,13 @@ function resetGame(clearboard) {
     document.getElementById("YellowplayerNameInput").value = ""
     document.getElementById("player-name-turn").value = ""
     
- 
+    
     document.getElementById("redplayerName").style.display = "none"
+    document.getElementById("player-name-turn").style.display = "none"
 
     //document.getElementById("redplayerName").value = ""
     document.getElementById("yellowplayerName").style.display = "none"
+    document.getElementById("show-whose-turn").style.display = "none"
 };
 
 
