@@ -16,6 +16,8 @@ function setRedPlayerName() { //function thgat is called by html
     playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
 
     document.getElementById('redplayerName').style.display = "block"
+    document.getElementById('divSetRedPlayerName').style.display = "block"
+    
 
 }
 
@@ -24,8 +26,9 @@ function setYellowPlayerName() {
     let playerNameDiv = document.getElementById('yellowplayerName');
 
     playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
+    
     document.getElementById('yellowplayerName').style.display = "block"
-
+    
 
 }
 
@@ -35,6 +38,8 @@ let redturn = true
 let winnerStatus = false
 
 document.getElementById("show-whose-turn").style.display = "none";
+
+
 
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
@@ -52,8 +57,9 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "red"
             redturn = false
-           if (document.getElementById('RedplayerNameInput').value !== ""){
-                 document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value }
+           if (document.getElementById('YellowplayerNameInput').value !== ""){
+                 document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value 
+                }
                  else 
                  document.getElementById("player-name-turn").innerText = "yellow"
 
@@ -64,8 +70,9 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "yellow"
             redturn = true
-            if (document.getElementById('YellowplayerNameInput').value !== ""){
-                document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value }
+            if (document.getElementById('RedplayerNameInput').value !== ""){
+                document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value 
+            }
                 else 
                 document.getElementById("player-name-turn").innerText = "red"
             break
@@ -434,6 +441,8 @@ function resetGame(clearboard) {
     //document.getElementById("redplayerName").value = ""
     document.getElementById("yellowplayerName").style.display = "none"
     document.getElementById("show-whose-turn").style.display = "none"
+
+    
 };
 
 
