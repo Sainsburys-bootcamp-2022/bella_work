@@ -41,7 +41,7 @@ function checkWinner() {
     const horizontalWinner = checkHorizontalWinner()
     const verticalWinner = checkVerticalWinner ()
     const diagonalWinner = checkDiagonalWinner ()
-    const draw = checkdrawWinner ()
+    const draw = checkdrawWinner()
     
     if(horizontalWinner) {
         return horizontalWinner
@@ -60,13 +60,13 @@ function checkWinner() {
         
     }
 
-// const checkdrawWinner = () => {
-// for (row =0; row <3;  row++){
-// if (!checkMatchingRow && !checkVerticalWinner && !checkDiagonalWinner && board [!null][!null])
-//     console.log('draw winner', checkWinner)
-//     return "nobody"
-//         }
-//  }
+const checkdrawWinner = () => {
+for (row =0; row <3;  row++){
+if (!checkMatchingRow && !checkVerticalWinner && !checkDiagonalWinner && board [!null][!null])
+    console.log('draw winner', checkWinner)
+    return "nobody"
+        }
+ }
     
 
 const checkHorizontalWinner = () => {
