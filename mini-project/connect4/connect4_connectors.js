@@ -84,6 +84,12 @@ function resetClick(event) { //when reset button is clicked
     const winnerDisplay = document.getElementById("winner-display"); // clearing every winner function
     winnerDisplay.style.display = "None"; //takes out the block 
 
+
+    let redturn = true
+    let winnerStatus = false
+    
+    document.getElementById("show-whose-turn").style.display = "none";
+    
     clearBoard();
 }
 

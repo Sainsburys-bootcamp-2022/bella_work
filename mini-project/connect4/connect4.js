@@ -417,6 +417,8 @@ const checkDiagonalleftwinner = () => {
 // 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
+    resetClick
+
     document.getElementById("show-whose-turn").style.display = "none"
     board =
         [[null, null, null, null, null, null, null],
@@ -427,21 +429,27 @@ function resetGame(clearboard) {
         [null, null, null, null, null, null, null]
         ]
     console.table(board)
+    winnerStatus = false
 
 
     //block of text is hidden till event lostener
     document.getElementById("RedplayerNameInput").value = ""
     document.getElementById("YellowplayerNameInput").value = ""
     document.getElementById("player-name-turn").value = ""
+    document.getElementById("winner-name").value = ""
+    document.getElementById("winner-display").value = ""
     
     
+
+
+
     document.getElementById("redplayerName").style.display = "none"
     document.getElementById("player-name-turn").style.display = "none"
 
     //document.getElementById("redplayerName").value = ""
     document.getElementById("yellowplayerName").style.display = "none"
     document.getElementById("show-whose-turn").style.display = "none"
-
+    
     
 };
 
@@ -483,4 +491,4 @@ if (typeof exports === 'object') {
     console.log("Running in Browser")
 }
 
-module.exports = {isValidRowOrColumn, isValidColumn}
+module.exports={isValidRowOrColumn, isValidColumn}
