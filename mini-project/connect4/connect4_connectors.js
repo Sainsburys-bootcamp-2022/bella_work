@@ -79,11 +79,23 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
        document.getElementById("player_info").style.display = "none";
        document.getElementById("game_over").style.display = "block";
        document.getElementById("show-whose-turn").style.display = "none";
+       
 
     }
 }
 
+function playAgainClick(event) {
+    playAgain();
+    clearBoard();
+    const winnerName = document.getElementById("winner-name"); // we are clearing winner name
+    winnerName.innerText = ""; // removing that from a screen
+    const winnerDisplay = document.getElementById("winner-display"); // clearing every winner function
+    winnerDisplay.style.display = "None";
+    document.getElementById("show-whose-turn").style.display = "block"
+    
 
+
+}
 
 
 
@@ -126,6 +138,11 @@ for (let rowIndex = 0; rowIndex < 6; rowIndex++) {
 // Bind the click event for the reset button.
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", resetClick);
+
+
+const newGameButton = document.getElementById("play-again-button");
+newGameButton.addEventListener("click",playAgainClick);
+
 
 if (typeof exports === 'object') {
     console.log("Running in Node")

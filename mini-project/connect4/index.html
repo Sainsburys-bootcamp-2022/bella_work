@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+      <div id="start_game">
 <head>
       <title>Connect4</title>
       <meta content="text/html; charset=utf-8" http-equiv="content-type">
@@ -24,15 +24,18 @@
                         <p id="winner-display"><strong><span id="winner_is">The winner is</span>  </strong><strong><span id="winner-name"> </span>! </strong>  </p>
                         <p id="game_over"><strong> <span id="game">Game</span><span id="over">Over</span></strong></p>
                         <div id="player_info">
+                        
                         <p id="PlayerHeader"><strong>Player</strong></p>
                         <p id="NameHeader"><strong> Names</strong></p>
+                        <br>
+                        <p id="redStart"><span id=red>Red</span><span id=go> goes</span><span id="first"> first!</span> </p>
                         <div id="show-whose-turn">      
                               <p id="naming-player-turn">
                                     <span id="player-name-turn"></span> it's <span id = your_taketurn>your</span> turn! </p>
                               <br>
                               
                         </div>
-                        
+                        <div id="input_boxes">
                         <br>
                         <p> <strong> Red Player is</strong></p>
                         <br />
@@ -43,6 +46,7 @@
 
                               <input type="text" id="RedplayerNameInput" placeholder="Enter Red player " />
                               <button onclick="setRedPlayerName();">Set player name</button>
+                              
                         </div>
                         <br />
                         <b>
@@ -58,8 +62,9 @@
 
                         </div>
                   </div>
-
+            </div>
                         <button id="reset-button">New Game</button>
+                        <button id="play-again-button">Play Again</button>
                   </fieldset>
             </div>
 
@@ -144,4 +149,5 @@
       <script src="connect4_connectors.js" type="text/javascript"></script>
 </body>
 
+</div>
 </html>

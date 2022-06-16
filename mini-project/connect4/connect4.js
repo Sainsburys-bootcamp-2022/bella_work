@@ -1,5 +1,6 @@
 
 
+
 let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null],
@@ -8,6 +9,18 @@ let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
 ]
+
+function setRedTurn () {
+    if (document.getElementById('RedplayerNameInput').value !== ""){
+        document.getElementById("red").innerText = document.getElementById('RedplayerNameInput').value 
+    }
+        else 
+        document.getElementById("red").innerText = "Red"
+        document.getElementById('redStart').style.display = "block"
+        
+}
+
+
 //console.table(board)
 // seting player name and displaying it on the screeen 
 function setRedPlayerName() { //function thgat is called by html
@@ -16,7 +29,8 @@ function setRedPlayerName() { //function thgat is called by html
     playerNameDiv.innerHTML = document.getElementById('RedplayerNameInput').value; //takes the value of tbe input box and displays on the html
 
     document.getElementById('redplayerName').style.display = "block"
-    document.getElementById('divSetRedPlayerName').style.display = "block"
+    document.getElementById('divSetRedPlayerName').style.display = "none"
+    
     
 
 }
@@ -28,6 +42,7 @@ function setYellowPlayerName() {
     playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
     
     document.getElementById('yellowplayerName').style.display = "block"
+    document.getElementById('divSetYellowPlayerName').style.display = "none"
     
 
 }
@@ -48,6 +63,8 @@ document.getElementById("game_over").style.display = "none";
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
+    setRedTurn
+    document.getElementById("naming-player-turn").style.display = "block"
     document.getElementById("show-whose-turn").style.display = "block"
     document.getElementById("player-name-turn").style.display = "block"
     if (winnerStatus === true) {
@@ -61,6 +78,7 @@ function takeTurn(row, column) {
             console.log(takeTurn)
             board[i][column] = "red"
             redturn = false
+            document.getElementById("redStart").style.display = "none"
            if (document.getElementById('YellowplayerNameInput').value !== ""){
                  document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value 
                 }
@@ -417,7 +435,37 @@ const checkDiagonalleftwinner = () => {
 // ]
 
 
+function playAgain(clearboard) {
+    playAgainClick
+    board =
+    [[null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null]
+    ]
+    winnerStatus = false
+    redturn = true
+    document.getElementById("show-whose-turn").style.display = "none"
+    document.getElementById("winner-name").value = ""
+    document.getElementById("winner-display").value = ""
+    document.getElementById("redStart").style.display = "block"
+    document.getElementById("game_over").style.display = "none"
+    document.getElementById("redStart").style.display = "block"
 
+
+    document.getElementById("player_info").style.display = "block"
+    document.getElementById("redplayerName").style.display = "none"
+    document.getElementById("player-name-turn").style.display = "none"
+
+    //document.getElementById("redplayerName").value = ""
+    document.getElementById("yellowplayerName").style.display = "none"
+    document.getElementById("show-whose-turn").style.display = "none"
+    document.getElementById("naming-player-turn").style.display = "none"
+    document.getElementById("input_boxes").style.display = "none"
+    
+}
 // 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
@@ -434,7 +482,7 @@ function resetGame(clearboard) {
         ]
     console.table(board)
     winnerStatus = false
-
+    redturn = true
 
     //block of text is hidden till event lostener
     document.getElementById("RedplayerNameInput").value = ""
@@ -443,7 +491,7 @@ function resetGame(clearboard) {
     document.getElementById("winner-name").value = ""
     document.getElementById("winner-display").value = ""
     document.getElementById("game_over").style.display = "none"
-    
+    document.getElementById("redStart").style.display = "block"
 
 
     document.getElementById("player_info").style.display = "block"
@@ -454,6 +502,7 @@ function resetGame(clearboard) {
     document.getElementById("yellowplayerName").style.display = "none"
     document.getElementById("show-whose-turn").style.display = "none"
     
+    document.getElementById("input_boxes").style.display = "block"
     
 };
 
