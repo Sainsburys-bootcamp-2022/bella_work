@@ -65,7 +65,7 @@ function takeTurn(row, column) {
                  document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value 
                 }
                  else 
-                 document.getElementById("player-name-turn").innerText = "yellow"
+                 document.getElementById("player-name-turn").innerText = "Yellow"
 
             break
         } 
@@ -78,7 +78,7 @@ function takeTurn(row, column) {
                 document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value 
             }
                 else 
-                document.getElementById("player-name-turn").innerText = "red"
+                document.getElementById("player-name-turn").innerText = "Red"
             break
         }
         else {
