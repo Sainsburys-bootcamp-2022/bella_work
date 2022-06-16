@@ -70,10 +70,21 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
         else if (winnerName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
             winnerName.innerText = document.getElementById('YellowplayerNameInput').value
 
+
+             
+            // document.getElementById("show-whose-turn").display = block
         const winnerDisplay = document.getElementById("winner-display"); // this is how it will showon html
         winnerDisplay.style.display = "block"; //block of text is hidden till event lostener
+       // document.getElementById("turn-announcement").style.display = "block"
+       document.getElementById("player_info").style.display = "none";
+       document.getElementById("game_over").style.display = "block";
+       document.getElementById("show-whose-turn").style.display = "none";
+
     }
 }
+
+
+
 
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)

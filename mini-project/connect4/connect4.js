@@ -39,6 +39,10 @@ let winnerStatus = false
 
 document.getElementById("show-whose-turn").style.display = "none";
 
+document.getElementById("winner-display").style.display = "none";
+
+document.getElementById("game_over").style.display = "none";
+
 
 
 // Take the row and column number between 0 and 2
@@ -438,11 +442,11 @@ function resetGame(clearboard) {
     document.getElementById("player-name-turn").value = ""
     document.getElementById("winner-name").value = ""
     document.getElementById("winner-display").value = ""
+    document.getElementById("game_over").style.display = "none"
     
-    
 
 
-
+    document.getElementById("player_info").style.display = "block"
     document.getElementById("redplayerName").style.display = "none"
     document.getElementById("player-name-turn").style.display = "none"
 

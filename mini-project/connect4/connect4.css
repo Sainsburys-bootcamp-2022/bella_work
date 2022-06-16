@@ -82,12 +82,32 @@ h2 {
 }
 
 #winner-display {
-    display: none;
-    color: black;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 3vw;
+    -webkit-text-stroke: 0.1vw black;
+    padding: 1vw;
+    font-family:Verdana
+}
+#winner_is{
+    font-family: Helvetica;
+    font-size: 3vw;
+    color: yellow;
+    -webkit-text-stroke: 0.1vw black;
+}
+
+#game{
+    color: red;
+    font-size: 3vw;
+    -webkit-text-stroke: 0.1vw black;
+    padding: 1vw;
+    font-family:Verdana
+}
+
+#over{
+    font-family: Helvetica;
+    font-size: 3vw;
+    color: yellow;
+    -webkit-text-stroke: 0.1vw black;
 }
 
 #naming-player-turn{
@@ -129,7 +149,7 @@ p {
 }
 
 #NameHeader {
-    font-size: 3vw;
+    font-size: 3.2vw;
     color: yellow;
     -webkit-text-stroke: 0.1vw black;
     padding: 1vw;
