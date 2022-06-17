@@ -10,6 +10,9 @@ let board = [
     [null, null, null, null, null, null, null]
 ]
 
+
+
+
 function setRedTurn () {
     if (document.getElementById('RedplayerNameInput').value !== ""){
         document.getElementById("red").innerText = document.getElementById('RedplayerNameInput').value 
@@ -19,6 +22,8 @@ function setRedTurn () {
         document.getElementById('redStart').style.display = "block"
         
 }
+
+document.getElementById('Score_Board').style.display = "none"
 
 
 //console.table(board)
@@ -51,6 +56,8 @@ function setYellowPlayerName() {
 
 let redturn = true
 let winnerStatus = false
+let redScore = 0 
+let yellowScore = 0 
 
 document.getElementById("show-whose-turn").style.display = "none";
 
@@ -135,12 +142,16 @@ function checkWinner() {
     } else if (nowinner) {
         return (nowinner)
     }
-
+    
     else {
 
         return null
     }
+
 }
+
+    
+
 
 checkdrawwinner = () => {
     let board_deepcopy = //ensures we are not copying the reference values from original
@@ -194,6 +205,10 @@ const checkHorizontalWinner = () => {
             if (rowcount == 4 && board !== rightboard && leftboard) {
                 console.log("red wins")
                 winnerStatus = true
+                redScore = redScore + 1
+                console.log('red score', redScore)
+                let redScoreCount = document.getElementById("redScoreCount")
+                redScoreCount.innerText = redScore
                 return "red"
             }
         }
@@ -214,6 +229,10 @@ const checkHorizontalWinner = () => {
             if (rowcount === 4 && board !== rightboard && leftboard) {
                 console.log("yellow wins")
                 winnerStatus = true
+                yellowScore = yellowScore + 1
+                console.log("yellow score", yellowScore)
+                let yellowScoreCount = document.getElementById("yellowScoreCount")
+                yellowScoreCount.innerText = yellowScore
                 return "yellow"
             }
         }
@@ -257,6 +276,10 @@ const checkVerticalWinner = () => {
             if (rowcount === 4 && board !== rightboard && leftboard) {
                 console.log("red wins")
                 winnerStatus = true
+                redScore = redScore + 1
+                console.log('red score', redScore)
+                let redScoreCount = document.getElementById("redScoreCount")
+                redScoreCount.innerText = redScore
                 return "red"
 
             }
@@ -287,6 +310,10 @@ const checkVerticalWinner = () => {
             if (rowcount == 4 && board !== rightboard && leftboard) {
                 console.log("yellow wins")
                 winnerStatus = true
+                yellowScore = yellowScore + 1
+                console.log("yellow score", yellowScore)
+                let yellowScoreCount = document.getElementById("yellowScoreCount")
+                yellowScoreCount.innerText = yellowScore
                 return "yellow"
                 break
             }
@@ -329,6 +356,10 @@ const checkDiagonalWinner = () => {
             if (rowcount === 4 && board !== rightboard && leftboard) {
                 console.log("red wins")
                 winnerStatus = true
+                redScore = redScore + 1
+                console.log('red score', redScore)
+                let redScoreCount = document.getElementById("redScoreCount")
+                redScoreCount.innerText = redScore
                 return "red"
             }
 
@@ -359,6 +390,10 @@ const checkDiagonalWinner = () => {
             if (rowcount === 4 && board !== rightboard && leftboard) {
                 console.log("yellow wins")
                 winnerStatus = true
+                yellowScore = yellowScore + 1
+                console.log("yellow score", yellowScore)
+                let yellowScoreCount = document.getElementById("yellowScoreCount")
+                yellowScoreCount.innerText = yellowScore
                 return "yellow"
             }
 
@@ -394,6 +429,10 @@ const checkDiagonalleftwinner = () => {
                 if (rowcount === 4 && board !== rightboard && leftboard) {
                     console.log('red wins')
                     winnerStatus = true
+                    redScore = redScore + 1
+                    console.log('red score', redScore)
+                    let redScoreCount = document.getElementById("redScoreCount")
+                    redScoreCount.innerText = redScore
                     return "red"
                 }
             }
@@ -415,6 +454,10 @@ const checkDiagonalleftwinner = () => {
             }
             if (rowcount === 4 && board !== rightboard && leftboard) {
                 winnerStatus = true
+                yellowScore = yellowScore + 1
+                console.log("yellow score", yellowScore)
+                let yellowScoreCount = document.getElementById("yellowScoreCount")
+                yellowScoreCount.innerText = yellowScore
                 return "yellow"
             }
 
@@ -447,6 +490,19 @@ function playAgain(clearboard) {
     ]
     winnerStatus = false
     redturn = true
+
+    // const redScoreName = document.getElementById("redScoreName")
+    //     if (redScoreName.innerText === "red" && document.getElementById('RedplayerNameInput').value !== "")
+    //          redScoreName.innerText = document.getElementById('RedplayerNameInput').value
+    // const yellowScoreName = document.getElementById("yellowScoreName")
+    //     if (yellowScoreName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
+    //     yellowScoreName.innerText = document.getElementById('YellowplayerNameInput').value
+
+
+
+
+
+
     document.getElementById("show-whose-turn").style.display = "none"
     document.getElementById("winner-name").value = ""
     document.getElementById("winner-display").value = ""
@@ -464,8 +520,23 @@ function playAgain(clearboard) {
     document.getElementById("show-whose-turn").style.display = "none"
     document.getElementById("naming-player-turn").style.display = "none"
     document.getElementById("input_boxes").style.display = "none"
+    document.getElementById('Score_Board').style.display = "block"
+
+  
+   
+    
+    
+    
+    function yellowScore() {
+        let yellowScoreCount = document.getElementById("yellowScoreCount")
+        
+        yellowScoreCount.innerHTML = yellowScore
+    
+    }
     
 }
+
+
 // 
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
@@ -483,6 +554,13 @@ function resetGame(clearboard) {
     console.table(board)
     winnerStatus = false
     redturn = true
+    redScore = 0
+    let redScoreCount = document.getElementById("redScoreCount")
+                    redScoreCount.innerText = redScore
+    yellowScore = 0
+    let yellowScoreCount = document.getElementById("yellowScoreCount")
+                yellowScoreCount.innerText = yellowScore
+
 
     //block of text is hidden till event lostener
     document.getElementById("RedplayerNameInput").value = ""
@@ -492,7 +570,7 @@ function resetGame(clearboard) {
     document.getElementById("winner-display").value = ""
     document.getElementById("game_over").style.display = "none"
     document.getElementById("redStart").style.display = "block"
-
+    document.getElementById('Score_Board').style.display = "none"
 
     document.getElementById("player_info").style.display = "block"
     document.getElementById("redplayerName").style.display = "none"

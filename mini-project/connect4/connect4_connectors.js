@@ -84,6 +84,7 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
     }
 }
 
+
 function playAgainClick(event) {
     playAgain();
     clearBoard();
@@ -92,7 +93,10 @@ function playAgainClick(event) {
     const winnerDisplay = document.getElementById("winner-display"); // clearing every winner function
     winnerDisplay.style.display = "None";
     document.getElementById("show-whose-turn").style.display = "block"
-    
+    redScore
+    yellowScore
+
+
 
 
 }
