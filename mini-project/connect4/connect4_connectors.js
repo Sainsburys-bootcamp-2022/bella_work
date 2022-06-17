@@ -101,7 +101,9 @@ function playAgainClick(event) {
 
 }
 
-
+function startGameClick(event){
+    document.getElementById('grid').style.display = "block"
+}
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)
 function resetClick(event) { //when reset button is clicked
@@ -119,15 +121,6 @@ function resetClick(event) { //when reset button is clicked
     
     clearBoard();
 }
-
-// function resetNames(event) {
-//     resetNames();
-//     const RedplayerNameInput = document.getElementById("RedplayerNameInput");
-//     RedplayerNameInput.innerText = "";
-
-//     const 
-
-// }
 
 
 // Bind the click events for the grid.
@@ -147,6 +140,8 @@ resetButton.addEventListener("click", resetClick);
 const newGameButton = document.getElementById("play-again-button");
 newGameButton.addEventListener("click",playAgainClick);
 
+const startGameButton = document.getElementById("start-game-button");
+startGameButton.addEventListener("click",startGameClick)
 
 if (typeof exports === 'object') {
     console.log("Running in Node")

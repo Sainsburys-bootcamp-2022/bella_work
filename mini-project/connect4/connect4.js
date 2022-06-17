@@ -10,7 +10,7 @@ let board = [
     [null, null, null, null, null, null, null]
 ]
 document.getElementById("redStart").style.display = "none"
-
+document.getElementById('grid').style.display = "none"
 
 
 let redScore = 0
