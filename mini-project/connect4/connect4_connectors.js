@@ -103,6 +103,8 @@ function playAgainClick(event) {
 
 function startGameClick(event){
     document.getElementById('grid').style.display = "block"
+    document.getElementById('start-game-button').style.display = "none"
+
 }
 
 // The reset button was clicked, call the game's reset function then reset the DOM (document)

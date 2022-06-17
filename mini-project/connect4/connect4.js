@@ -11,6 +11,8 @@ let board = [
 ]
 document.getElementById("redStart").style.display = "none"
 document.getElementById('grid').style.display = "none"
+document.getElementById("redStart").style.display = "none"
+
 
 
 let redScore = 0
@@ -28,7 +30,7 @@ function setRedTurn() {
 
     document.getElementById("redStart").style.display = "block"
 }
-document.getElementById("redStart").style.display = "block"
+
 
 document.getElementById('Score_Board').style.display = "none"
 
@@ -504,7 +506,7 @@ function playAgain(clearboard) {
     console.log('conditional 1 result for red', redScoreName.innerText === "Red")
     console.log('conditional 1 result for red', redScoreName.innerText)
     console.log('conditional 2 result for red', document.getElementById('RedplayerNameInput').value !== "")
-
+    document.getElementById("redStart").style.display = "block"
 
     //  if (redScoreName.innerText == "Red" && document.getElementById('RedplayerNameInput').value !== ""){
     //      console.log("i have reached the red score name inner text")
@@ -587,7 +589,7 @@ function resetGame(clearboard) {
     yellowScore = 0
     let yellowScoreCount = document.getElementById("yellowScoreCount")
     yellowScoreCount.innerText = yellowScore
-
+    document.getElementById("redStart").style.display = "block"
 
 };
 
