@@ -9,19 +9,26 @@ let board = [
     [null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null]
 ]
+document.getElementById("redStart").style.display = "none"
 
 
 
+let redScore = 0
 
-function setRedTurn () {
-    if (document.getElementById('RedplayerNameInput').value !== ""){
-        document.getElementById("red").innerText = document.getElementById('RedplayerNameInput').value 
+
+function setRedTurn() {
+
+    if (document.getElementById('RedplayerNameInput').value !== "") {
+        document.getElementById("red") = document.getElementById('RedplayerNameInput').value
     }
-        else 
+    else {
+        console.log(document.getElementById("red").innerText)
         document.getElementById("red").innerText = "Red"
-        document.getElementById('redStart').style.display = "block"
-        
+    }
+
+    document.getElementById("redStart").style.display = "block"
 }
+document.getElementById("redStart").style.display = "block"
 
 document.getElementById('Score_Board').style.display = "none"
 
@@ -35,8 +42,8 @@ function setRedPlayerName() { //function thgat is called by html
 
     document.getElementById('redplayerName').style.display = "block"
     document.getElementById('divSetRedPlayerName').style.display = "none"
-    
-    
+
+
 
 }
 
@@ -45,10 +52,10 @@ function setYellowPlayerName() {
     let playerNameDiv = document.getElementById('yellowplayerName');
 
     playerNameDiv.innerHTML = document.getElementById('YellowplayerNameInput').value;
-    
+
     document.getElementById('yellowplayerName').style.display = "block"
     document.getElementById('divSetYellowPlayerName').style.display = "none"
-    
+
 
 }
 
@@ -56,27 +63,28 @@ function setYellowPlayerName() {
 
 let redturn = true
 let winnerStatus = false
-let redScore = 0 
-let yellowScore = 0 
+redScore = 0
+yellowScore = 0
 
 document.getElementById("show-whose-turn").style.display = "none";
 
 document.getElementById("winner-display").style.display = "none";
 
 document.getElementById("game_over").style.display = "none";
+document.getElementById("input_boxes").style.display = "block"
 
 
 
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
-    setRedTurn
+
     document.getElementById("naming-player-turn").style.display = "block"
     document.getElementById("show-whose-turn").style.display = "block"
     document.getElementById("player-name-turn").style.display = "block"
     if (winnerStatus === true) {
         return
-    } 
+    }
     console.log(`takeTurn was called with row: ${row}, column: ${column}`);
     console.log(redturn);
     for (let i = 5; i >= 0; i--) { //i = number of column, wiill loop whilst i >= 0 will loop but it runs thro all iteration until its successful. the i ensures it starts at the bottom.
@@ -86,23 +94,23 @@ function takeTurn(row, column) {
             board[i][column] = "red"
             redturn = false
             document.getElementById("redStart").style.display = "none"
-           if (document.getElementById('YellowplayerNameInput').value !== ""){
-                 document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value 
-                }
-                 else 
-                 document.getElementById("player-name-turn").innerText = "Yellow"
+            if (document.getElementById('YellowplayerNameInput').value !== "") {
+                document.getElementById("player-name-turn").innerText = document.getElementById('YellowplayerNameInput').value
+            }
+            else
+                document.getElementById("player-name-turn").innerText = "Yellow"
 
             break
-        } 
-        
+        }
+
         else if (board[i][column] === null) {
             console.log(takeTurn)
             board[i][column] = "yellow"
             redturn = true
-            if (document.getElementById('RedplayerNameInput').value !== ""){
-                document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value 
+            if (document.getElementById('RedplayerNameInput').value !== "") {
+                document.getElementById("player-name-turn").innerText = document.getElementById('RedplayerNameInput').value
             }
-                else 
+            else
                 document.getElementById("player-name-turn").innerText = "Red"
             break
         }
@@ -142,7 +150,7 @@ function checkWinner() {
     } else if (nowinner) {
         return (nowinner)
     }
-    
+
     else {
 
         return null
@@ -150,7 +158,7 @@ function checkWinner() {
 
 }
 
-    
+
 
 
 checkdrawwinner = () => {
@@ -481,39 +489,39 @@ const checkDiagonalleftwinner = () => {
 function playAgain(clearboard) {
     playAgainClick
     board =
-    [[null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null]
-    ]
+        [[null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null]
+        ]
     winnerStatus = false
     redturn = true
 
-     const redScoreName = document.getElementById("redScoreName")
-     console.log('red player name input:', document.getElementById('RedplayerNameInput').value)
-     console.log('conditional 1 result for red', redScoreName.innerText === "Red" )
-     console.log('conditional 1 result for red', redScoreName.innerText )
-     console.log('conditional 2 result for red',  document.getElementById('RedplayerNameInput').value !== "" )
-     
+    const redScoreName = document.getElementById("redScoreName")
+    console.log('red player name input:', document.getElementById('RedplayerNameInput').value)
+    console.log('conditional 1 result for red', redScoreName.innerText === "Red")
+    console.log('conditional 1 result for red', redScoreName.innerText)
+    console.log('conditional 2 result for red', document.getElementById('RedplayerNameInput').value !== "")
+
 
     //  if (redScoreName.innerText == "Red" && document.getElementById('RedplayerNameInput').value !== ""){
     //      console.log("i have reached the red score name inner text")
     //          redScoreName.innerText = document.getElementById('RedplayerNameInput').value 
     //     }
-        if (document.getElementById('RedplayerNameInput').value !== ""){
-            console.log("i have reached the red score name inner text")
-                redScoreName.innerText = document.getElementById('RedplayerNameInput').value 
-           }
+    if (document.getElementById('RedplayerNameInput').value !== "") {
+        console.log("i have reached the red score name inner text")
+        redScoreName.innerText = document.getElementById('RedplayerNameInput').value
+    }
 
 
     // const yellowScoreName = document.getElementById("yellowScoreName")
     //     if (yellowScoreName.innerText === "Yellow" && document.getElementById('YellowplayerNameInput').value !== "")
     //     yellowScoreName.innerText = document.getElementById('YellowplayerNameInput').value
 
-        const yellowScoreName = document.getElementById("yellowScoreName")
-        if (document.getElementById('YellowplayerNameInput').value !== "")
+    const yellowScoreName = document.getElementById("yellowScoreName")
+    if (document.getElementById('YellowplayerNameInput').value !== "")
         yellowScoreName.innerText = document.getElementById('YellowplayerNameInput').value
 
     console.log("red score name", redScoreName.innerText)
@@ -541,18 +549,18 @@ function playAgain(clearboard) {
     document.getElementById("input_boxes").style.display = "none"
     document.getElementById('Score_Board').style.display = "block"
 
-  
-   
-    
-    
-    
+
+
+
+
+
     function yellowScore() {
         let yellowScoreCount = document.getElementById("yellowScoreCount")
-        
+
         yellowScoreCount.innerHTML = yellowScore
-    
+
     }
-    
+
 }
 
 
@@ -560,7 +568,7 @@ function playAgain(clearboard) {
 // Set the game state back to its original state to play another game.
 function resetGame(clearboard) {
     resetClick
-
+    window.location.reload()
     document.getElementById("show-whose-turn").style.display = "none"
     board =
         [[null, null, null, null, null, null, null],
@@ -575,34 +583,13 @@ function resetGame(clearboard) {
     redturn = true
     redScore = 0
     let redScoreCount = document.getElementById("redScoreCount")
-                    redScoreCount.innerText = redScore
+    redScoreCount.innerText = redScore
     yellowScore = 0
     let yellowScoreCount = document.getElementById("yellowScoreCount")
-                yellowScoreCount.innerText = yellowScore
+    yellowScoreCount.innerText = yellowScore
 
 
-    //block of text is hidden till event lostener
-    document.getElementById("RedplayerNameInput").value = ""
-    document.getElementById("YellowplayerNameInput").value = ""
-    document.getElementById("player-name-turn").value = ""
-    document.getElementById("winner-name").value = ""
-    document.getElementById("winner-display").value = ""
-    document.getElementById("game_over").style.display = "none"
-    document.getElementById("redStart").style.display = "block"
-    document.getElementById('Score_Board').style.display = "none"
-
-    document.getElementById("player_info").style.display = "block"
-    document.getElementById("redplayerName").style.display = "none"
-    document.getElementById("player-name-turn").style.display = "none"
-
-    //document.getElementById("redplayerName").value = ""
-    document.getElementById("yellowplayerName").style.display = "none"
-    document.getElementById("show-whose-turn").style.display = "none"
-    
-    document.getElementById("input_boxes").style.display = "block"
-    
 };
-
 
 
 
@@ -641,4 +628,4 @@ if (typeof exports === 'object') {
     console.log("Running in Browser")
 }
 
-module.exports={isValidRowOrColumn, isValidColumn}
+module.exports = { isValidRowOrColumn, isValidColumn }
