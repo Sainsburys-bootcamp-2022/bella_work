@@ -491,14 +491,33 @@ function playAgain(clearboard) {
     winnerStatus = false
     redturn = true
 
-    // const redScoreName = document.getElementById("redScoreName")
-    //     if (redScoreName.innerText === "red" && document.getElementById('RedplayerNameInput').value !== "")
-    //          redScoreName.innerText = document.getElementById('RedplayerNameInput').value
+     const redScoreName = document.getElementById("redScoreName")
+     console.log('red player name input:', document.getElementById('RedplayerNameInput').value)
+     console.log('conditional 1 result for red', redScoreName.innerText === "Red" )
+     console.log('conditional 1 result for red', redScoreName.innerText )
+     console.log('conditional 2 result for red',  document.getElementById('RedplayerNameInput').value !== "" )
+     
+
+    //  if (redScoreName.innerText == "Red" && document.getElementById('RedplayerNameInput').value !== ""){
+    //      console.log("i have reached the red score name inner text")
+    //          redScoreName.innerText = document.getElementById('RedplayerNameInput').value 
+    //     }
+        if (document.getElementById('RedplayerNameInput').value !== ""){
+            console.log("i have reached the red score name inner text")
+                redScoreName.innerText = document.getElementById('RedplayerNameInput').value 
+           }
+
+
     // const yellowScoreName = document.getElementById("yellowScoreName")
-    //     if (yellowScoreName.innerText === "yellow" && document.getElementById('YellowplayerNameInput').value !== "")
+    //     if (yellowScoreName.innerText === "Yellow" && document.getElementById('YellowplayerNameInput').value !== "")
     //     yellowScoreName.innerText = document.getElementById('YellowplayerNameInput').value
 
+        const yellowScoreName = document.getElementById("yellowScoreName")
+        if (document.getElementById('YellowplayerNameInput').value !== "")
+        yellowScoreName.innerText = document.getElementById('YellowplayerNameInput').value
 
+    console.log("red score name", redScoreName.innerText)
+    console.log("yellow score name", yellowScoreName.innerText)
 
 
 
