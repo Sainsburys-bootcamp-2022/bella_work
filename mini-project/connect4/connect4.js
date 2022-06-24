@@ -11,7 +11,7 @@ let board = [
 ]
 document.getElementById("redStart").style.display = "none"
 document.getElementById('grid').style.display = "none"
-document.getElementById("redStart").style.display = "none"
+document.getElementById("redStart").style.display = "block"
 
 
 
@@ -125,10 +125,6 @@ function takeTurn(row, column) {
     console.table(board)
 }
 
-//const submitbtn = documentget elements by idnexfunction bu
-
-// Return either "noughts", "crosses" or "nobody" if the game is over.
-// Otherwise return null to continue playing.
 
 
 
@@ -178,9 +174,6 @@ checkdrawwinner = () => {
 }
 
 
-// a for loop, starting at 0, checks thro all the values, adding one each time, when it finds a value it changes the value of i to =
-// the idnex number. assign this index number to another vairable. run the loop again. if the difference between i and k = 1 then carry onto the next lop
-//  make the index value of, repeat this until we have ran the loop 4 times. 
 
 const checkHorizontalWinner = () => {
     let rightboard = [board[0], [14], [21], [28], [35]]
@@ -478,14 +471,6 @@ const checkDiagonalleftwinner = () => {
 
 
 
-// //let board =
-// ['0','1','2','3','4','5','6',
-// '7','8','9','10','11','12','13',
-// '14','15','16','17','18','19','20',
-// '21','22','23','24','25','26','27',
-// '28','29','30','31','32','33','34',
-// '35','36','37','38','39','40','41'
-// ]
 
 
 function playAgain(clearboard) {
@@ -550,7 +535,7 @@ function playAgain(clearboard) {
     document.getElementById("naming-player-turn").style.display = "none"
     document.getElementById("input_boxes").style.display = "none"
     document.getElementById('Score_Board').style.display = "block"
-
+    document.getElementById("grid").style.display = "block"
 
 
 
@@ -605,11 +590,7 @@ function isValidColumn(columnArray) {
     return columnArray.every(function (item) { return ["red", "yellow", null].includes(item); });
 }
 
-//isValidRowOrColumn(columnArray) && 
 
-
-// Return the current board state with either a "nought" or a "cross" in
-// each position. Put a null in a position that hasn't been played yet.
 function getBoard() {
     console.log("getBoard was called");
     return board

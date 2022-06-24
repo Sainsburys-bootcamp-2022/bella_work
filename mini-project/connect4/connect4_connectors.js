@@ -40,18 +40,7 @@ function positionClick(rowIndex, columnIndex, event) { // check row column index
 
     drawBoard(board);
 
-    // const displayName = takeTurn();
-
-    // if (displayName)
-    // {
-    // const displayPlayerName = document.getElementById("players-name-turn");
-    // displayPlayerName.innertext = displayName;
-    // if (redturn === false && document.getElementById('RedplayerNameInput').value !== ""){
-    //     displayName.innerText = document.getElementById('RedplayerNameInput').value
-    // }
-    // else if (redturn === true && document.getElementById('YellowplayerNameInput').value !== "")
-    //     displayName.innerText = document.getElementById('YellowplayerNameInput').value
-        
+    
 
     const winner = checkWinner();
 

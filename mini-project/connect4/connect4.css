@@ -232,7 +232,7 @@ p {
 }
 #redHeader{
     color: rgb(255, 0, 0);
-    -webkit-text-stroke: 0.1vw black;
+    -webkit-text-stroke: 0.05vw black;
     font-size: 15pt;
 }
 
@@ -249,7 +249,7 @@ p {
     font-size:  15pt;
     font-family:Verdana;
     color: yellow;
-    -webkit-text-stroke: 0.1vw black;
+    -webkit-text-stroke: 0.05vw black;
 }
 
 #red{
